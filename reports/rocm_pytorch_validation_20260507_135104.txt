@@ -1,0 +1,8 @@
+================================================================
+ROCm PyTorch VALIDATION — Test 1
+Date: 西元2026年05月07日 (週四) 13時51分04秒 CST
+Conda env: rocm-comfyui-r9700
+================================================================
+
+
+Report saved to: /mnt/c/ai_projects/rocm-image-video-stack/reports/rocm_pytorch_validation_20260507_135104.txt

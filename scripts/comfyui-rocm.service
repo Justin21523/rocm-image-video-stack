@@ -1,0 +1,23 @@
+[Unit]
+Description=ComfyUI ROCm Service (R9700)
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=justin
+Group=justin
+WorkingDirectory=/mnt/c/ai_tools/comfyui-rocm
+ExecStart=/home/justin/miniconda3/envs/rocm-comfyui-r9700/bin/python /mnt/c/ai_tools/comfyui-rocm/main.py --listen 127.0.0.1 --port 8188 --disable-pinned-memory
+Restart=on-failure
+RestartSec=10
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTORCH_ALLOC_CONF=garbage_collection_threshold:0.9,max_split_size_mb:512
+Environment=HSA_OVERRIDE_GFX_VERSION=11.0.0
+
+# Resource limits
+LimitNOFILE=65536
+Nice=10
+
+[Install]
+WantedBy=multi-user.target

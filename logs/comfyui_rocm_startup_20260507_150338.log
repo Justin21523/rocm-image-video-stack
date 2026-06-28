@@ -1,0 +1,145 @@
+setup plugin alembic.autogenerate.schemas
+setup plugin alembic.autogenerate.tables
+setup plugin alembic.autogenerate.types
+setup plugin alembic.autogenerate.constraints
+setup plugin alembic.autogenerate.defaults
+setup plugin alembic.autogenerate.comments
+[ComfyUI-Manager] Using `uv` as Python module for pip operations.
+Using Python 3.11.15 environment at: /home/justin/miniconda3/envs/rocm-comfyui-r9700
+[START] Security scan
+[DONE] Security scan
+## ComfyUI-Manager: installing dependencies done.
+** ComfyUI startup time: 2026-05-07 15:03:41.058
+** Platform: Linux
+** Python version: 3.11.15 (main, Mar 11 2026, 17:20:07) [GCC 14.3.0]
+** Python executable: /home/justin/miniconda3/envs/rocm-comfyui-r9700/bin/python
+** ComfyUI Path: /mnt/c/ai_tools/comfyui-rocm
+** ComfyUI Base Folder Path: /mnt/c/ai_tools/comfyui-rocm
+** User directory: /mnt/c/ai_tools/comfyui-rocm/user
+** ComfyUI-Manager config path: /mnt/c/ai_tools/comfyui-rocm/user/__manager/config.ini
+** Log path: /mnt/c/ai_tools/comfyui-rocm/user/comfyui.log
+Using Python 3.11.15 environment at: /home/justin/miniconda3/envs/rocm-comfyui-r9700
+Using Python 3.11.15 environment at: /home/justin/miniconda3/envs/rocm-comfyui-r9700
+
+Prestartup times for custom nodes:
+   0.0 seconds: /mnt/c/ai_tools/comfyui-rocm/custom_nodes/rgthree-comfy
+   0.3 seconds: /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager
+
+Found comfy_kitchen backend triton: {'available': True, 'disabled': True, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_mxfp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8']}
+Found comfy_kitchen backend cuda: {'available': True, 'disabled': True, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_mxfp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_nvfp4']}
+Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_mxfp8', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_mxfp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_mxfp8', 'scaled_mm_nvfp4']}
+Checkpoint files will always be loaded safely.
+Total VRAM 32624 MB, total RAM 61916 MB
+pytorch version: 2.11.0+rocm7.2
+Set: torch.backends.cudnn.enabled = False for better AMD performance.
+AMD arch: gfx1201
+ROCm version: (7, 2)
+Set vram state to: NORMAL_VRAM
+Device: cuda:0 AMD Radeon AI PRO R9700 : native
+Using async weight offloading with 2 streams
+Enabled pinned memory 55724.0
+Using pytorch attention
+Python version: 3.11.15 (main, Mar 11 2026, 17:20:07) [GCC 14.3.0]
+ComfyUI version: 0.20.1
+comfy-aimdo version: 0.3.0
+comfy-kitchen version: 0.2.8
+ComfyUI frontend version: 1.43.17
+[Prompt Server] web root: /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages/comfyui_frontend_package/static
+Asset seeder disabled
+
+[92m[rgthree-comfy] Loaded 48 extraordinary nodes. 🎉[0m
+
+[33m[rgthree-comfy] ComfyUI's new Node 2.0 rendering may be incompatible with some rgthree-comfy nodes and features, breaking some rendering as well as losing the ability to access a node's properties (a vital part of many nodes). It also appears to run MUCH more slowly spiking CPU usage and causing jankiness and unresponsiveness, especially with large workflows. Personally I am not planning to use the new Nodes 2.0 and, unfortunately, am not able to invest the time to investigate and overhaul rgthree-comfy where needed. If you have issues when Nodes 2.0 is enabled, I'd urge you to switch it off as well and join me in hoping ComfyUI is not planning to deprecate the existing, stable canvas rendering all together.
+[0m
+ComfyUI-GGUF: Allowing full torch compile
+### Loading: ComfyUI-Manager (V3.40)
+[ComfyUI-Manager] network_mode: public
+[ComfyUI-Manager] ComfyUI per-queue preview override detected (PR #11261). Manager's preview method feature is disabled. Use ComfyUI's --preview-method CLI option or 'Settings > Execution > Live preview method'.
+### ComfyUI Version: v0.20.1-77-ge35348aa | Released on '2026-05-06'
+
+Import times for custom nodes:
+   0.0 seconds: /mnt/c/ai_tools/comfyui-rocm/custom_nodes/websocket_image_save.py
+   0.0 seconds: /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Custom-Scripts
+   0.0 seconds: /mnt/c/ai_tools/comfyui-rocm/custom_nodes/rgthree-comfy
+   0.0 seconds: /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials
+   0.0 seconds: /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-GGUF
+   0.0 seconds: /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager
+   0.1 seconds: /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-VideoHelperSuite
+   0.1 seconds: /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-LTXVideo
+
+Context impl SQLiteImpl.
+Will assume non-transactional DDL.
+Starting server
+
+To see the GUI go to: http://0.0.0.0:8189
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/model-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/alter-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/github-stats.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extension-node-map.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json
+FETCH ComfyRegistry Data: 5/144
+FETCH ComfyRegistry Data: 10/144
+FETCH ComfyRegistry Data: 15/144
+FETCH ComfyRegistry Data: 20/144
+FETCH ComfyRegistry Data: 25/144
+FETCH ComfyRegistry Data: 30/144
+FETCH ComfyRegistry Data: 35/144
+FETCH ComfyRegistry Data: 40/144
+FETCH ComfyRegistry Data: 45/144
+FETCH ComfyRegistry Data: 50/144
+FETCH ComfyRegistry Data: 55/144
+FETCH ComfyRegistry Data: 60/144
+FETCH ComfyRegistry Data: 65/144
+FETCH ComfyRegistry Data: 70/144
+FETCH ComfyRegistry Data: 75/144
+FETCH ComfyRegistry Data: 80/144
+FETCH ComfyRegistry Data: 85/144
+FETCH ComfyRegistry Data: 90/144
+FETCH ComfyRegistry Data: 95/144
+FETCH ComfyRegistry Data: 100/144
+FETCH ComfyRegistry Data: 105/144
+got prompt
+invalid prompt: {'type': 'missing_node_type', 'message': "Node 'Float Constant' not found. The custom node may not be installed.", 'details': "Node ID '#23'", 'extra_info': {'node_id': '23', 'class_type': 'FloatConstant', 'node_title': 'Float Constant'}}
+FETCH ComfyRegistry Data: 110/144
+FETCH ComfyRegistry Data: 115/144
+got prompt
+invalid prompt: {'type': 'missing_node_type', 'message': "Node 'Float Constant' not found. The custom node may not be installed.", 'details': "Node ID '#23'", 'extra_info': {'node_id': '23', 'class_type': 'FloatConstant', 'node_title': 'Float Constant'}}
+FETCH ComfyRegistry Data: 120/144
+FETCH ComfyRegistry Data: 125/144
+got prompt
+invalid prompt: {'type': 'missing_node_type', 'message': "Node 'Float Constant' not found. The custom node may not be installed.", 'details': "Node ID '#23'", 'extra_info': {'node_id': '23', 'class_type': 'FloatConstant', 'node_title': 'Float Constant'}}
+FETCH ComfyRegistry Data: 130/144
+FETCH ComfyRegistry Data: 135/144
+FETCH ComfyRegistry Data: 140/144
+FETCH ComfyRegistry Data [DONE]
+[ComfyUI-Manager] default cache updated: https://api.comfy.org/nodes
+FETCH DATA from: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json [DONE]
+[ComfyUI-Manager] All startup tasks have been completed.
+got prompt
+Failed to validate prompt for output 21:
+* GuiderParameters 19:
+  - Required input is missing: cross_attn
+  - Required input is missing: skip_step
+  - Required input is missing: perturb_attn
+* GuiderParameters 18:
+  - Required input is missing: cross_attn
+  - Required input is missing: skip_step
+  - Required input is missing: perturb_attn
+* MultimodalGuider 17:
+  - Exception when validating inner node: list index out of range
+* LTXVEmptyLatentAudio 26:
+  - Required input is missing: audio_vae
+Output will be ignored
+Failed to validate prompt for output 15:
+Output will be ignored
+invalid prompt: {'type': 'prompt_outputs_failed_validation', 'message': 'Prompt outputs failed validation', 'details': '', 'extra_info': {}}
+got prompt
+Failed to validate prompt for output 21:
+* MultimodalGuider 17:
+  - Exception when validating inner node: list index out of range
+* LTXVEmptyLatentAudio 26:
+  - Required input is missing: audio_vae
+Output will be ignored
+Failed to validate prompt for output 15:
+Output will be ignored
+invalid prompt: {'type': 'prompt_outputs_failed_validation', 'message': 'Prompt outputs failed validation', 'details': '', 'extra_info': {}}

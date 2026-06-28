@@ -1,0 +1,3 @@
+model_roots:
+  primary: /mnt/c/ai_models/diffusion/diffusion_models/
+  cache: /mnt/c/ai_cache

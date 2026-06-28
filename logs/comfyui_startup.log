@@ -1,0 +1,124 @@
+setup plugin alembic.autogenerate.schemas
+setup plugin alembic.autogenerate.tables
+setup plugin alembic.autogenerate.types
+setup plugin alembic.autogenerate.constraints
+setup plugin alembic.autogenerate.defaults
+setup plugin alembic.autogenerate.comments
+Adding extra search path checkpoints /mnt/c/ai_models/diffusion/stable-diffusion/checkpoints
+Adding extra search path vae /mnt/c/ai_models/diffusion/stable-diffusion/vae
+Adding extra search path loras /mnt/c/ai_models/diffusion/lora
+Adding extra search path loras_sdxl /mnt/c/ai_models/diffusion/lora/sdxl
+Adding extra search path clip /mnt/c/ai_models/diffusion/clip
+Adding extra search path diffusion_models /mnt/c/ai_models/diffusion/diffusion_models
+Adding extra search path controlnet /mnt/c/ai_models/diffusion/controlnet
+Adding extra search path upscale_models /mnt/c/ai_models/vision/upscale
+Adding extra search path video /mnt/c/ai_models/video
+[ROCm TunableOp] cache-only mode (no tuning), loaded /mnt/c/ai_tools/comfyui-rocm/tunableop_ltx23.csv
+[ComfyUI-Manager] Using `uv` as Python module for pip operations.
+Using Python 3.11.15 environment at: /home/justin/miniconda3/envs/rocm-comfyui-r9700
+[START] Security scan
+[DONE] Security scan
+## ComfyUI-Manager: installing dependencies done.
+** ComfyUI startup time: 2026-05-08 13:01:59.545
+** Platform: Linux
+** Python version: 3.11.15 (main, Mar 11 2026, 17:20:07) [GCC 14.3.0]
+** Python executable: /home/justin/miniconda3/envs/rocm-comfyui-r9700/bin/python
+** ComfyUI Path: /mnt/c/ai_tools/comfyui-rocm
+** ComfyUI Base Folder Path: /mnt/c/ai_tools/comfyui-rocm
+** User directory: /mnt/c/ai_tools/comfyui-rocm/user
+** ComfyUI-Manager config path: /mnt/c/ai_tools/comfyui-rocm/user/__manager/config.ini
+** Log path: /mnt/c/ai_tools/comfyui-rocm/user/comfyui.log
+Using Python 3.11.15 environment at: /home/justin/miniconda3/envs/rocm-comfyui-r9700
+Using Python 3.11.15 environment at: /home/justin/miniconda3/envs/rocm-comfyui-r9700
+
+Prestartup times for custom nodes:
+   0.0 seconds: /mnt/c/ai_tools/comfyui-rocm/custom_nodes/rgthree-comfy
+   0.4 seconds: /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager
+   1.4 seconds: /mnt/c/ai_tools/comfyui-rocm/custom_nodes/rocm-tunableop-optimizer
+
+WARNING: Potential Error in code: Torch already imported, torch should never be imported before this point.
+Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_mxfp8', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_mxfp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_mxfp8', 'scaled_mm_nvfp4']}
+Found comfy_kitchen backend triton: {'available': True, 'disabled': True, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_mxfp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8']}
+Found comfy_kitchen backend cuda: {'available': True, 'disabled': True, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_mxfp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_nvfp4']}
+Checkpoint files will always be loaded safely.
+Total VRAM 32624 MB, total RAM 61916 MB
+pytorch version: 2.11.0+rocm7.2
+Set: torch.backends.cudnn.enabled = False for better AMD performance.
+AMD arch: gfx1201
+ROCm version: (7, 2)
+Set vram state to: NORMAL_VRAM
+Device: cuda:0 AMD Radeon AI PRO R9700 : native
+Using async weight offloading with 2 streams
+Enabled pinned memory 55724.0
+Using pytorch attention
+Python version: 3.11.15 (main, Mar 11 2026, 17:20:07) [GCC 14.3.0]
+ComfyUI version: 0.20.1
+comfy-aimdo version: 0.3.0
+comfy-kitchen version: 0.2.8
+ComfyUI frontend version: 1.43.17
+[Prompt Server] web root: /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages/comfyui_frontend_package/static
+Asset seeder disabled
+
+[92m[rgthree-comfy] Loaded 48 exciting nodes. 🎉[0m
+
+[33m[rgthree-comfy] ComfyUI's new Node 2.0 rendering may be incompatible with some rgthree-comfy nodes and features, breaking some rendering as well as losing the ability to access a node's properties (a vital part of many nodes). It also appears to run MUCH more slowly spiking CPU usage and causing jankiness and unresponsiveness, especially with large workflows. Personally I am not planning to use the new Nodes 2.0 and, unfortunately, am not able to invest the time to investigate and overhaul rgthree-comfy where needed. If you have issues when Nodes 2.0 is enabled, I'd urge you to switch it off as well and join me in hoping ComfyUI is not planning to deprecate the existing, stable canvas rendering all together.
+[0m
+ComfyUI-GGUF: Allowing full torch compile
+Traceback (most recent call last):
+  File "/mnt/c/ai_tools/comfyui-rocm/nodes.py", line 2196, in load_custom_node
+    module_spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1073, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1130, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '/mnt/c/ai_tools/comfyui-rocm/custom_nodes/rocm-tunableop-optimizer/__init__.py'
+
+Cannot import /mnt/c/ai_tools/comfyui-rocm/custom_nodes/rocm-tunableop-optimizer module for custom nodes: [Errno 2] No such file or directory: '/mnt/c/ai_tools/comfyui-rocm/custom_nodes/rocm-tunableop-optimizer/__init__.py'
+### Loading: ComfyUI-Manager (V3.40)
+[ComfyUI-Manager] network_mode: public
+[ComfyUI-Manager] ComfyUI per-queue preview override detected (PR #11261). Manager's preview method feature is disabled. Use ComfyUI's --preview-method CLI option or 'Settings > Execution > Live preview method'.
+### ComfyUI Version: v0.20.1-77-ge35348aa | Released on '2026-05-06'
+
+Import times for custom nodes:
+   0.0 seconds: /mnt/c/ai_tools/comfyui-rocm/custom_nodes/websocket_image_save.py
+   0.0 seconds (IMPORT FAILED): /mnt/c/ai_tools/comfyui-rocm/custom_nodes/rocm-tunableop-optimizer
+   0.0 seconds: /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Custom-Scripts
+   0.0 seconds: /mnt/c/ai_tools/comfyui-rocm/custom_nodes/rgthree-comfy
+   0.0 seconds: /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials
+   0.0 seconds: /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-GGUF
+   0.0 seconds: /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager
+   0.1 seconds: /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-LTXVideo
+   0.1 seconds: /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-VideoHelperSuite
+
+Context impl SQLiteImpl.
+Will assume non-transactional DDL.
+Starting server
+
+To see the GUI go to: http://0.0.0.0:8188
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/alter-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/model-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/github-stats.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extension-node-map.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json
+FETCH ComfyRegistry Data: 5/144
+FETCH ComfyRegistry Data: 10/144
+FETCH ComfyRegistry Data: 15/144
+FETCH ComfyRegistry Data: 20/144
+FETCH ComfyRegistry Data: 25/144
+FETCH ComfyRegistry Data: 30/144
+FETCH ComfyRegistry Data: 35/144
+FETCH ComfyRegistry Data: 40/144
+FETCH ComfyRegistry Data: 45/144
+FETCH ComfyRegistry Data: 50/144
+FETCH ComfyRegistry Data: 55/144
+FETCH ComfyRegistry Data: 60/144
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /extensions/core/widgetInputs.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /extensions/core/groupNode.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+WARNING path /mnt/c/ai_tools/comfyui-rocm/models/checkpoints/svd_xt.safetensors exists but doesn't link anywhere, skipping.
+WARNING path /mnt/c/ai_models/diffusion/stable-diffusion/checkpoints/svd_xt.safetensors exists but doesn't link anywhere, skipping.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui/components/button.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui/components/buttonGroup.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+FETCH ComfyRegistry Data: 65/144
+FETCH ComfyRegistry Data: 70/144
+FETCH ComfyRegistry Data: 75/144
+FETCH ComfyRegistry Data: 80/144

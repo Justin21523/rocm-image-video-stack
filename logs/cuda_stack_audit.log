@@ -1,0 +1,3 @@
+--- CUDA Stack Audit Starting ---
+[1/2] Listing Conda Environments...
+/mnt/c/ai_projects/rocm-image-generation-stack/scripts/02_readonly_scan_comfyui_cuda_stack.sh: line 9: conda: command not found

@@ -1,0 +1,53 @@
+================================================================
+PyTorch Upgrade Verification
+Expected: 2.11.0+rocm7.2   Old: 2.5.1+rocm6.2
+Date: 西元2026年05月07日 (週四) 13時38分51秒 CST
+================================================================
+
+--- rocm-comfyui-r9700 ---
+  Active torch: 2.11.0+rocm7.2
+  [PASS] New version confirmed
+  [OK]   Old dist-info not present (correctly removed)
+  [OK]   No rocm6.2 artifacts remaining
+  Env size: 15G
+
+--- rocm-diffusers-r9700 ---
+  Active torch: 2.11.0+rocm7.2
+  [PASS] New version confirmed
+  [OK]   Old dist-info not present (correctly removed)
+  [OK]   No rocm6.2 artifacts remaining
+  Env size: 16G
+
+--- rocm-video-r9700 ---
+  Active torch: 2.11.0+rocm7.2
+  [PASS] New version confirmed
+  [OK]   Old dist-info not present (correctly removed)
+  [OK]   No rocm6.2 artifacts remaining
+  Env size: 16G
+
+--- rocm-lora-r9700 ---
+  Active torch: 2.11.0+rocm7.2
+  [PASS] New version confirmed
+  [OK]   Old dist-info not present (correctly removed)
+  [OK]   No rocm6.2 artifacts remaining
+  Env size: 16G
+
+--- rocm-pytorch-r9700 ---
+  Active torch: 2.11.0+rocm7.2
+  [PASS] New version confirmed
+  [OK]   Old dist-info not present (correctly removed)
+  [OK]   No rocm6.2 artifacts remaining
+  Env size: 16G
+
+--- rocm-ltx23-r9700 ---
+  Active torch: 2.11.0+rocm7.2
+  [PASS] New version confirmed
+  [OK]   Old dist-info not present (correctly removed)
+  [OK]   No rocm6.2 artifacts remaining
+  Env size: 18G
+
+================================================================
+Summary: 6 PASSED, 0 FAILED
+All ROCm environments successfully upgraded to 2.11.0+rocm7.2
+Log: /mnt/c/ai_projects/rocm-image-video-stack/logs/03b_verify_pytorch_20260507_133851.log
+================================================================

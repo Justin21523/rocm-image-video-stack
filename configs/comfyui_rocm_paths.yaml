@@ -1,0 +1,47 @@
+# ComfyUI ROCm Path Configuration
+# AMD Radeon AI PRO R9700
+
+comfyui_rocm:
+  install_dir: /mnt/c/ai_tools/comfyui-rocm
+  models_dir: /mnt/c/ai_tools/comfyui-rocm/models
+  custom_nodes_dir: /mnt/c/ai_tools/comfyui-rocm/custom_nodes
+  user_dir: /mnt/c/ai_tools/comfyui-rocm/user
+  workflows_dir: /mnt/c/ai_tools/comfyui-rocm/user/default/workflows
+  output_dir: /mnt/c/ai_tools/comfyui-rocm/output
+  temp_dir: /mnt/c/ai_tools/comfyui-rocm/temp
+  launch_script: /mnt/c/ai_tools/comfyui-rocm/start_comfyui_rocm.sh
+  constraints_file: /mnt/c/ai_tools/comfyui-rocm/constraints.txt
+  conda_env: rocm-comfyui-r9700
+  port: 8189
+  git_remote: https://github.com/comfyanonymous/ComfyUI.git
+
+model_symlink_sources:
+  checkpoints: /mnt/c/ai_models/diffusion/stable-diffusion/checkpoints
+  loras: /mnt/c/ai_models/diffusion/lora
+  vae: /mnt/c/ai_models/diffusion/stable-diffusion/vae
+  controlnet: /mnt/c/ai_models/diffusion/controlnet
+  clip: /mnt/c/ai_models/diffusion/clip
+  text_encoders: /mnt/c/ai_models/diffusion/text_encoders
+  ipadapter: /mnt/c/ai_models/diffusion/ipadapter
+  embeddings: /mnt/c/ai_models/diffusion/embeddings
+  upscale_models: /mnt/c/ai_models/diffusion/model_patches
+  video: /mnt/c/ai_models/video
+  clip_vision: /mnt/c/ai_models/vision
+
+cuda_comfyui:
+  install_dir: /mnt/c/ai_tools/comfyui
+  port: 8188
+  status: protected_do_not_modify
+
+launch_env_vars:
+  HIP_VISIBLE_DEVICES: "0"
+  PYTORCH_HIP_ALLOC_CONF: "garbage_collection_threshold:0.7,max_split_size_mb:128"
+  TORCH_ROCM_AOTRITON_ENABLE_EXPERIMENTAL: "1"
+  LIBVA_DRIVER_NAME: "radeonsi"
+
+launch_flags:
+  - --listen 0.0.0.0
+  - --port 8189
+  - --use-pytorch-cross-attention
+  - --disable-xformers
+  - --normalvram

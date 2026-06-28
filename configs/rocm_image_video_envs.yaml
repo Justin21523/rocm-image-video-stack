@@ -1,0 +1,84 @@
+# ROCm Image/Video Stack — Conda Environment Definitions
+# AMD Radeon AI PRO R9700 (gfx1201)
+
+rocm:
+  version: "7.2.3"
+  path: /opt/rocm
+  hip_arch: gfx1201
+  pytorch_version: "2.5.1+rocm6.2"
+  pytorch_index_url: "https://download.pytorch.org/whl/rocm6.2"
+  pytorch_upgrade_version: "2.11.0+rocm7.2"
+  pytorch_upgrade_index_url: "https://download.pytorch.org/whl/rocm7.2"
+
+envs:
+  rocm-comfyui-r9700:
+    description: "ComfyUI ROCm + LTX-2.3 workflows"
+    python: "3.12"
+    status: "already_created"
+    pytorch: "2.5.1+rocm6.2"
+    upgrade_recommended: true
+    comfyui_port: 8189
+    launch_flags:
+      - "--use-pytorch-cross-attention"
+      - "--disable-xformers"
+      - "--normalvram"
+    env_vars:
+      HIP_VISIBLE_DEVICES: "0"
+      PYTORCH_HIP_ALLOC_CONF: "garbage_collection_threshold:0.7,max_split_size_mb:128"
+      TORCH_ROCM_AOTRITON_ENABLE_EXPERIMENTAL: "1"
+
+  rocm-diffusers-r9700:
+    description: "HuggingFace Diffusers ROCm pipelines"
+    python: "3.12"
+    status: "already_created"
+    pytorch: "2.5.1+rocm6.2"
+    upgrade_recommended: true
+
+  rocm-video-r9700:
+    description: "Video tools: FFmpeg, OpenCV, moviepy, Wan2.1"
+    python: "3.12"
+    status: "already_created"
+    pytorch: "2.5.1+rocm6.2"
+    packages_to_install:
+      - ffmpeg (conda-forge)
+      - opencv-python
+      - imageio[ffmpeg]
+      - moviepy
+      - av
+      - ffmpeg-python
+
+  rocm-lora-r9700:
+    description: "LTX-2 LoRA training with ROCm"
+    python: "3.12"
+    status: "already_created"
+    pytorch: "2.5.1+rocm6.2"
+    upgrade_recommended: true
+
+  rocm-llamacpp-r9700:
+    description: "llama.cpp Python bindings (ROCm/HIP)"
+    python: "3.12"
+    status: "already_created"
+    pytorch: "2.5.1+rocm6.2"
+    note: "llama-cpp-python already built; do not rebuild without approval"
+
+  rocm-pytorch-r9700:
+    description: "General ROCm PyTorch base environment"
+    python: "3.12"
+    status: "already_created"
+    pytorch: "2.5.1+rocm6.2"
+
+  rocm-ltx23-r9700:
+    description: "LTX-2 Python package for direct inference (fallback)"
+    python: "3.12"
+    status: "may_be_missing"
+    pytorch: "2.5.1+rocm6.2"
+    packages_to_install:
+      - "pip install -e /mnt/c/ai_tools/LTX-2[inference]"
+
+cuda_envs_protected:
+  - comfyui
+  - kohya_ss
+  - ai_env
+  - audio_env
+  - data_env
+  - base

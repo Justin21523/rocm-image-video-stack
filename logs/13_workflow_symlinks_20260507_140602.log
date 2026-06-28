@@ -1,0 +1,57 @@
+[DRY-RUN mode]
+================================================================
+WORKFLOW SYMLINK SETUP
+Date: 西元2026年05月07日 (週四) 14時06分02秒 CST
+Source:  /mnt/c/ai_tools/comfyui/user/default/workflows
+Target:  /mnt/c/ai_tools/comfyui-rocm/user/default/workflows
+================================================================
+
+  [LINK]  aas_flux2_fp8_t2i.json -> /mnt/c/ai_projects/animation-ai-studio/comfyui/gui_workflows/aas_flux2_fp8_t2i.json
+  [LINK]  aas_flux2_klein_4b_distilled_image_edit_refine.json -> /mnt/c/ai_projects/animation-ai-studio/comfyui/gui_workflows/aas_flux2_klein_4b_distilled_image_edit_refine.json
+  [LINK]  aas_flux2_klein_text_to_image.json -> /mnt/c/ai_projects/animation-ai-studio/comfyui/gui_workflows/aas_flux2_klein_text_to_image.json
+  [LINK]  aas_flux2_text_to_image.json -> /mnt/c/ai_projects/animation-ai-studio/comfyui/gui_workflows/aas_flux2_text_to_image.json
+  [LINK]  aas_qwen_image_2512_lightning_2steps.json -> /mnt/c/ai_projects/animation-ai-studio/comfyui/gui_workflows/aas_qwen_image_2512_lightning_2steps.json
+  [LINK]  aas_qwen_image_2512_t2i.json -> /mnt/c/ai_projects/animation-ai-studio/comfyui/gui_workflows/aas_qwen_image_2512_t2i.json
+  [LINK]  aas_qwen_image_instantx_controlnet_refine.json -> /mnt/c/ai_projects/animation-ai-studio/comfyui/gui_workflows/aas_qwen_image_instantx_controlnet_refine.json
+  [LINK]  aas_qwen_image_t2i.json -> /mnt/c/ai_projects/animation-ai-studio/comfyui/gui_workflows/aas_qwen_image_t2i.json
+  [LINK]  aas_qwen_image_union_control_lora_refine.json -> /mnt/c/ai_projects/animation-ai-studio/comfyui/gui_workflows/aas_qwen_image_union_control_lora_refine.json
+  [LINK]  aas_z_image_base_t2i.json -> /mnt/c/ai_projects/animation-ai-studio/comfyui/gui_workflows/aas_z_image_base_t2i.json
+  [LINK]  aas_z_image_turbo_2k_upscaler_refine.app.json -> /mnt/c/ai_projects/animation-ai-studio/comfyui/gui_workflows/aas_z_image_turbo_2k_upscaler_refine.app.json
+  [LINK]  aas_z_image_turbo_fun_union_controlnet_refine.json -> /mnt/c/ai_projects/animation-ai-studio/comfyui/gui_workflows/aas_z_image_turbo_fun_union_controlnet_refine.json
+  [LINK]  aas_z_image_turbo_t2i.json -> /mnt/c/ai_projects/animation-ai-studio/comfyui/gui_workflows/aas_z_image_turbo_t2i.json
+  [LINK]  AI3D - hunyuan3d21_image_to_model.json -> /mnt/c/ai_projects/ai-3d-studio/workflows/ComfyUI/AI3D - hunyuan3d21_image_to_model.json
+  [LINK]  AI3D-UniRig -> /mnt/c/ai_projects/ai-3d-studio/workflows/AI3D-UniRig
+  [LINK]  animatediff_sdxl_i2v_ref_10s_rife_upscale.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/animatediff_sdxl_i2v_ref_10s_rife_upscale.json
+  [LINK]  animatediff_sdxl_i2v_ref.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/animatediff_sdxl_i2v_ref.json
+  [LINK]  animatediff_sdxl_t2v_10s_upscale.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/animatediff_sdxl_t2v_10s_upscale.json
+  [LINK]  animatediff_sdxl_t2v.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/animatediff_sdxl_t2v.json
+  [LINK]  cogvideox_v2v.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/cogvideox_v2v.json
+  [LINK]  flux2_klein_ultimate_v2.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/flux2_klein_ultimate_v2.json
+  [LINK]  ltx23_2frame_inject_duo_3lora_audio.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/ltx23_2frame_inject_duo_3lora_audio.json
+  [LINK]  ltx23_2frame_inject.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/ltx23_2frame_inject.json
+  [LINK]  ltx23_2frame_inject_single_lora_audio.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/ltx23_2frame_inject_single_lora_audio.json
+  [LINK]  ltx23_3frame_inject_duo_3lora_audio.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/ltx23_3frame_inject_duo_3lora_audio.json
+  [LINK]  ltx23_3frame_inject.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/ltx23_3frame_inject.json
+  [LINK]  ltx23_3frame_inject_single_lora_audio.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/ltx23_3frame_inject_single_lora_audio.json
+  [LINK]  LTX 2.3 Dual Character LoRA Video.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/LTX 2.3 Dual Character LoRA Video.json
+  [LINK]  ltx2.3_frame_injection.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/ltx2.3_frame_injection.json
+  [LINK]  ltx2.3_i2v.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/ltx2.3_i2v.json
+  [LINK]  ltx23_i2v_two_stage_distilled_16gb_gguf.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/ltx23_i2v_two_stage_distilled_16gb_gguf.json
+  [LINK]  ltx2.3_ICLora_Depth+Pose.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/ltx2.3_ICLora_Depth+Pose.json
+  [LINK]  ltx23_iclora_depth_pose_test_assets.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/ltx23_iclora_depth_pose_test_assets.json
+  [LINK]  ltx23_t2v_two_stage_distilled_16gb_gguf.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/ltx23_t2v_two_stage_distilled_16gb_gguf.json
+  [LINK]  ltx2.3_video.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/ltx2.3_video.json
+  [LINK]  luca_ltx23_i2v_deduped.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/luca_ltx23_i2v_deduped.json
+  [LINK]  rs-nodes LTXV.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/rs-nodes LTXV.json
+  [LINK]  rs-nodes LTXV Luca Miguel Duo Test GUI.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/rs-nodes LTXV Luca Miguel Duo Test GUI.json
+  [LINK]  RS Single Character LTXV LoRA Trainer.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/RS Single Character LTXV LoRA Trainer.json
+  [LINK]  svd_i2v_10s_rife_upscale.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/svd_i2v_10s_rife_upscale.json
+  [LINK]  wan_i2v_10s_rife_upscale.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/wan_i2v_10s_rife_upscale.json
+  [LINK]  wan_i2v_refined_10s_rife_upscale.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/wan_i2v_refined_10s_rife_upscale.json
+  [LINK]  wan_t2v_10s_rife_upscale.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/wan_t2v_10s_rife_upscale.json
+  [LINK]  wan_t2v_30fps_lora.json -> /mnt/c/ai_projects/video-family-lora-hub/comfyui/gui_workflows/wan_t2v_30fps_lora.json
+
+================================================================
+Workflow symlinks: 44 created/updated, 0 already correct, 0 errors
+Log: /mnt/c/ai_projects/rocm-image-video-stack/logs/13_workflow_symlinks_20260507_140602.log
+================================================================

@@ -1,0 +1,168 @@
+# ComfyUI Custom Node Manifest — ROCm Stack
+# Risk classification for AMD gfx1201 (R9700)
+
+nodes:
+  # ===== GREEN TIER — Phase 5 (install first) =====
+
+  - name: ComfyUI-Manager
+    repo: https://github.com/ltdrdata/ComfyUI-Manager
+    risk: green
+    phase: 5
+    requires_approval: true
+    constraints_required: true
+    notes: Pure Python node manager; no GPU code
+
+  - name: rgthree-comfy
+    repo: https://github.com/rgthree/rgthree-comfy
+    risk: green
+    phase: 5
+    requires_approval: true
+    constraints_required: true
+    notes: Utility nodes; no GPU-specific code
+
+  - name: ComfyUI-Custom-Scripts
+    repo: https://github.com/pythongosssss/ComfyUI-Custom-Scripts
+    risk: green
+    phase: 5
+    requires_approval: true
+    constraints_required: false
+    notes: UI scripts only; no requirements.txt needed
+
+  - name: ComfyUI_essentials
+    repo: https://github.com/cubiq/ComfyUI_essentials
+    risk: green
+    phase: 5
+    requires_approval: true
+    constraints_required: true
+    notes: Essential node pack; likely safe; test after install
+
+  - name: ComfyUI-VideoHelperSuite
+    repo: https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite
+    risk: green
+    phase: 5
+    requires_approval: true
+    constraints_required: true
+    notes: FFmpeg wrapper for video I/O; no GPU compute
+
+  # ===== YELLOW TIER — Phase 6 (test after Phase 5 validated) =====
+
+  - name: ComfyUI-LTXVideo
+    repo: https://github.com/Lightricks/ComfyUI-LTXVideo
+    risk: yellow
+    phase: 6
+    requires_approval: true
+    constraints_required: true
+    notes: >
+      Official LTX-2.3 nodes. May require flash-attn.
+      Build from ROCm/flash-attention source if needed.
+      FP8 compute may fail on gfx1201 — use GGUF fallback if so.
+    flash_attn_risk: medium
+    fp8_risk: high
+
+  - name: ComfyUI-GGUF
+    repo: https://github.com/city96/ComfyUI-GGUF
+    risk: yellow
+    phase: 6
+    requires_approval: true
+    constraints_required: true
+    notes: >
+      GGUF quantized model loader via llama-cpp-python.
+      Install only if FP8 safetensors fail (see ComfyUI-LTXVideo notes).
+      llama.cpp ROCm support is excellent.
+
+  - name: ComfyUI-KJNodes
+    repo: https://github.com/kijai/ComfyUI-KJNodes
+    risk: yellow
+    phase: 7
+    requires_approval: true
+    constraints_required: true
+    notes: Quality utility nodes; test each node class before production use
+
+  - name: ComfyUI-WanVideoWrapper
+    repo: https://github.com/kijai/ComfyUI-WanVideoWrapper
+    risk: yellow
+    phase: 9
+    requires_approval: true
+    constraints_required: true
+    notes: Wan2.1 video wrapper; test after video tools validated
+
+  - name: comfyui_controlnet_aux
+    repo: https://github.com/Fannovel16/comfyui_controlnet_aux
+    risk: yellow
+    phase: 7
+    requires_approval: true
+    constraints_required: true
+    notes: Most preprocessors are pure PyTorch; test depth/canny first
+
+  - name: ComfyUI-Frame-Interpolation
+    repo: https://github.com/Fannovel16/ComfyUI-Frame-Interpolation
+    risk: yellow
+    phase: 9
+    requires_approval: true
+    constraints_required: true
+    notes: RIFE interpolation; PyTorch version should work; check for cupy dependency
+
+  - name: ComfyUI-InstantID
+    repo: https://github.com/cubiq/ComfyUI_InstantID
+    risk: yellow
+    phase: 8
+    requires_approval: true
+    constraints_required: true
+    notes: Face identity; insightface dependency; test face detection first
+
+  # ===== ORANGE TIER — Known issues, use with workarounds =====
+
+  - name: ComfyUI-AnimateDiff-Evolved
+    repo: https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved
+    risk: orange
+    phase: 7
+    requires_approval: true
+    constraints_required: true
+    workaround: >
+      PYTORCH_HIP_ALLOC_CONF=garbage_collection_threshold:0.7,max_split_size_mb:128
+      Required to prevent VRAM fragmentation on second run.
+      Restart ComfyUI if VRAM stuck at 100%.
+    notes: VRAM leak documented on ROCm; set env var before starting
+
+  - name: ComfyUI-CameraPack
+    repo: (check original install)
+    risk: orange
+    phase: later
+    requires_approval: true
+    constraints_required: true
+    notes: May use xformers attention; disable-xformers flag should mitigate
+
+  # ===== RED TIER — Avoid initially =====
+
+  - name: xformers (standalone)
+    risk: red
+    phase: never_initially
+    notes: >
+      CUDA-only pip binary. Do NOT install via pip.
+      If needed, build from source: git clone facebookresearch/xformers
+      then: PYTORCH_ROCM_ARCH=gfx1201 pip install -e .
+      Use --use-pytorch-cross-attention instead until validated.
+
+  - name: bitsandbytes (standard pip)
+    risk: red
+    phase: never_initially
+    notes: >
+      Not tested on gfx1201 RDNA4. If needed, use ROCm branch:
+      git clone -b rocm_enabled_multi_backend https://github.com/ROCm/bitsandbytes
+      GGUF quantization is the preferred alternative.
+
+  - name: RES4LYF
+    repo: (already in CUDA ComfyUI)
+    risk: red
+    phase: later
+    notes: Large custom node pack; unknown ROCm testing; defer until core stack stable
+
+# constraints.txt template
+constraints_template:
+  file: /mnt/c/ai_tools/comfyui-rocm/constraints.txt
+  content: |
+    torch==2.5.1+rocm6.2
+    torchvision==0.20.1+rocm6.2
+    torchaudio==2.5.1+rocm6.2
+  note: >
+    Update version numbers if PyTorch is upgraded to 2.9+rocm7.2 in Phase 2.

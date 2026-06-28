@@ -1,0 +1,56 @@
+================================================================
+ComfyUI ROCm MODEL SYMLINKS
+Date: 西元2026年05月07日 (週四) 13時44分51秒 CST
+Dry run: true
+================================================================
+
+--- Checkpoints ---
+  Source: /mnt/c/ai_models/diffusion/stable-diffusion/checkpoints
+  Target: /mnt/c/ai_tools/comfyui-rocm/models/checkpoints
+  [SKIP] Target is non-empty directory — manual inspection required
+--- LoRA ---
+  Source: /mnt/c/ai_models/diffusion/lora
+  Target: /mnt/c/ai_tools/comfyui-rocm/models/loras
+  [SKIP] Target is non-empty directory — manual inspection required
+--- VAE ---
+  Source: /mnt/c/ai_models/diffusion/stable-diffusion/vae
+  Target: /mnt/c/ai_tools/comfyui-rocm/models/vae
+  [SKIP] Target is non-empty directory — manual inspection required
+--- CLIP ---
+  Source: /mnt/c/ai_models/diffusion/clip
+  Target: /mnt/c/ai_tools/comfyui-rocm/models/clip
+  [SKIP] Target is non-empty directory — manual inspection required
+--- Text Encoders ---
+  Source: /mnt/c/ai_models/diffusion/text_encoders
+  Target: /mnt/c/ai_tools/comfyui-rocm/models/text_encoders
+  [SKIP] Target is non-empty directory — manual inspection required
+--- ControlNet ---
+  Source: /mnt/c/ai_models/diffusion/controlnet
+  Target: /mnt/c/ai_tools/comfyui-rocm/models/controlnet
+  [SKIP] Target is non-empty directory — manual inspection required
+--- IP-Adapter ---
+  Source: /mnt/c/ai_models/diffusion/ipadapter
+  Target: /mnt/c/ai_tools/comfyui-rocm/models/ipadapter
+  [DRY RUN] Would create: ln -sfn /mnt/c/ai_models/diffusion/ipadapter /mnt/c/ai_tools/comfyui-rocm/models/ipadapter
+
+--- Embeddings ---
+  Source: /mnt/c/ai_models/diffusion/embeddings
+  Target: /mnt/c/ai_tools/comfyui-rocm/models/embeddings
+  [SKIP] Target is non-empty directory — manual inspection required
+--- Upscale Models ---
+  Source: /mnt/c/ai_models/diffusion/model_patches
+  Target: /mnt/c/ai_tools/comfyui-rocm/models/upscale_models
+  [SKIP] Target is non-empty directory — manual inspection required
+--- Video Models (LTX-2.3, Wan2.1, AnimateDiff) ---
+  Source: /mnt/c/ai_models/video
+  Target: /mnt/c/ai_tools/comfyui-rocm/models/video
+  [DRY RUN] Would create: ln -sfn /mnt/c/ai_models/video /mnt/c/ai_tools/comfyui-rocm/models/video
+
+--- Vision / CLIP Vision ---
+  Source: /mnt/c/ai_models/vision
+  Target: /mnt/c/ai_tools/comfyui-rocm/models/clip_vision
+  [SKIP] Target is non-empty directory — manual inspection required
+
+================================================================
+Dry run complete. Run without --dry-run to apply changes.
+================================================================

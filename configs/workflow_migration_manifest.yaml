@@ -1,0 +1,111 @@
+# Workflow Migration Manifest
+# CUDA ComfyUI → ROCm ComfyUI Adaptation Plan
+
+source_base: /mnt/c/ai_tools/comfyui/user/default/workflows
+target_base: /mnt/c/ai_projects/rocm-image-video-stack/workflows/comfyui-rocm
+
+migration_rules:
+  - never_overwrite_source: true
+  - copy_to_cuda_originals_dir: true
+  - make_originals_readonly: true
+  - adapted_suffix: "_rocm"
+  - validated_suffix: "_rocm_validated"
+
+workflow_categories:
+  ltx23:
+    target_dir: /mnt/c/ai_projects/rocm-image-video-stack/workflows/ltx23
+    priority: 1
+    workflows:
+      - name: ltx23_t2v_minimal
+        description: "Minimal T2V smoke test (256x144, 9 frames)"
+        source: build_from_template
+        template: ComfyUI-LTXVideo example_workflows/2.3/text-to-video.json
+        status: pending
+        phase: 6
+
+      - name: ltx23_t2v_standard
+        description: "Standard T2V (1216x704, 49 frames, distilled)"
+        source: build_from_template
+        template: ComfyUI-LTXVideo example_workflows/2.3/text-to-video.json
+        status: pending
+        phase: 6
+
+      - name: ltx23_i2v_standard
+        description: "Image-to-video (1216x704, 25 frames)"
+        source: build_from_template
+        template: ComfyUI-LTXVideo example_workflows/2.3/image-to-video.json
+        status: pending
+        phase: 7
+
+      - name: ltx23_t2v_two_stage_upscale
+        description: "Two-stage T2V with spatial upscaler x2"
+        source: build_from_template
+        status: pending
+        phase: 8
+
+  image_to_video:
+    target_dir: /mnt/c/ai_projects/rocm-image-video-stack/workflows/image-to-video
+    priority: 2
+    workflows:
+      - name: ltx23_i2v_portrait
+        description: "LTX-2.3 I2V portrait 720x1280"
+        source: build_new
+        status: pending
+        phase: 7
+
+  text_to_video:
+    target_dir: /mnt/c/ai_projects/rocm-image-video-stack/workflows/text-to-video
+    priority: 2
+    workflows:
+      - name: ltx23_t2v_hd
+        description: "LTX-2.3 T2V 1920x1080 (requires VRAM headroom)"
+        source: build_new
+        status: pending
+        phase: 7
+
+  validation:
+    target_dir: /mnt/c/ai_projects/rocm-image-video-stack/workflows/validation
+    priority: 1
+    workflows:
+      - name: sdxl_512_smoke_test
+        description: "SDXL 512x512 20 steps — basic GPU test"
+        source: build_new
+        status: pending
+        phase: 5
+
+      - name: ltx23_minimal_256x144
+        description: "1-second LTX-2.3 video — minimal validation"
+        source: build_new
+        status: pending
+        phase: 6
+
+node_adaptation_notes:
+  safe_nodes:
+    - KSampler
+    - KSamplerAdvanced
+    - CLIPTextEncode
+    - CheckpointLoaderSimple
+    - VAEDecode
+    - VAEEncode
+    - LoRALoader
+    - ControlNetLoader
+    - ControlNetApply
+    - SaveImage
+    - LoadImage
+    - ImageScale
+    - IPAdapterLoader
+
+  needs_replacement:
+    - pattern: "xformers.*"
+      action: "Remove; use default PyTorch SDPA (--use-pytorch-cross-attention)"
+    - pattern: "BitsAndBytesNF4ModelLoader"
+      action: "Replace with GGUF UNETLoader"
+    - pattern: "cuda_*"
+      action: "Inspect; replace case by case"
+
+  needs_testing:
+    - LTXSampler
+    - LTXModelCheckpointLoader
+    - LTXGemmaTextEncode
+    - LTXICLoRALoaderModelOnly
+    - LTXLatentUpsampler

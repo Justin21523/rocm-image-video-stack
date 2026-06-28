@@ -1,0 +1,14 @@
+================================================================
+LTX-2.3 T2V WORKFLOW VALIDATION — Test 6
+Date: 西元2026年05月07日 (週四) 14時11分25秒 CST
+================================================================
+
+Pre-flight checks...
+  [OK] Models found
+
+
+================================================================
+LTX-2.3 pre-flight complete.
+See LTX23_ROCM_IMPLEMENTATION_PLAN.md for full generation instructions.
+Log: /mnt/c/ai_projects/rocm-image-video-stack/logs/10_ltx23_validate_20260507_141125.log
+================================================================

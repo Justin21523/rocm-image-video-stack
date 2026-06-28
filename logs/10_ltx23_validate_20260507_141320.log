@@ -1,0 +1,36 @@
+================================================================
+LTX-2.3 T2V WORKFLOW VALIDATION — Test 6
+Date: 西元2026年05月07日 (週四) 14時13分20秒 CST
+================================================================
+
+Pre-flight checks...
+  [OK] Models found
+
+Testing LTX-2.3 minimal workflow...
+  Resolution: 256x144 | Frames: 9 | Steps: 8 (distilled)
+
+[PASS] GPU: AMD Radeon AI PRO R9700
+[PASS] VRAM: 34.2 GB
+[PASS] PyTorch: 2.11.0+rocm7.2
+[PASS] ComfyUI-LTXVideo: present
+[PASS] Distilled FP8 model: 29.5 GB
+[PASS] Gemma-3-12B (fp4 mixed): 9.4 GB
+[PASS] Distilled LoRA (384-dim): 7.6 GB
+[PASS] Latent upsampler weights: 1.0 GB
+
+================================================================
+Pre-flight checks complete.
+
+To run full inference validation:
+1. Start ComfyUI: bash /mnt/c/ai_tools/comfyui-rocm/start_comfyui_rocm.sh
+2. Open http://localhost:8189 — load ltx2.3_video.json workflow
+3. Configure: 256x144, 9 frames, 8 steps, CFG 1.0 (distilled mode)
+4. If FP8 NotImplementedError: use GGUF workflow ltx23_t2v_two_stage_distilled_16gb_gguf.json
+================================================================
+
+
+================================================================
+LTX-2.3 pre-flight complete.
+See LTX23_ROCM_IMPLEMENTATION_PLAN.md for full generation instructions.
+Log: /mnt/c/ai_projects/rocm-image-video-stack/logs/10_ltx23_validate_20260507_141320.log
+================================================================

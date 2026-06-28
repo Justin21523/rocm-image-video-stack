@@ -1,0 +1,113 @@
+================================================================
+ComfyUI ROCm MODEL SYMLINKS
+Date: 西元2026年05月07日 (週四) 13時45分19秒 CST
+Dry run: false
+================================================================
+
+--- Checkpoints ---
+  Source: /mnt/c/ai_models/diffusion/stable-diffusion/checkpoints
+  Target: /mnt/c/ai_tools/comfyui-rocm/models/checkpoints
+  [REPLACE] Empty directory will be removed and replaced with symlink
+  [CREATED] Symlink created successfully
+
+--- LoRA ---
+  Source: /mnt/c/ai_models/diffusion/lora
+  Target: /mnt/c/ai_tools/comfyui-rocm/models/loras
+  [REPLACE] Empty directory will be removed and replaced with symlink
+  [CREATED] Symlink created successfully
+
+--- VAE ---
+  Source: /mnt/c/ai_models/diffusion/stable-diffusion/vae
+  Target: /mnt/c/ai_tools/comfyui-rocm/models/vae
+  [REPLACE] Empty directory will be removed and replaced with symlink
+  [CREATED] Symlink created successfully
+
+--- CLIP ---
+  Source: /mnt/c/ai_models/diffusion/clip
+  Target: /mnt/c/ai_tools/comfyui-rocm/models/clip
+  [REPLACE] Empty directory will be removed and replaced with symlink
+  [CREATED] Symlink created successfully
+
+--- Text Encoders ---
+  Source: /mnt/c/ai_models/diffusion/text_encoders
+  Target: /mnt/c/ai_tools/comfyui-rocm/models/text_encoders
+  [REPLACE] Empty directory will be removed and replaced with symlink
+  [CREATED] Symlink created successfully
+
+--- ControlNet ---
+  Source: /mnt/c/ai_models/diffusion/controlnet
+  Target: /mnt/c/ai_tools/comfyui-rocm/models/controlnet
+  [REPLACE] Empty directory will be removed and replaced with symlink
+  [CREATED] Symlink created successfully
+
+--- IP-Adapter ---
+  Source: /mnt/c/ai_models/diffusion/ipadapter
+  Target: /mnt/c/ai_tools/comfyui-rocm/models/ipadapter
+  [CREATED] Symlink created successfully
+
+--- Embeddings ---
+  Source: /mnt/c/ai_models/diffusion/embeddings
+  Target: /mnt/c/ai_tools/comfyui-rocm/models/embeddings
+  [REPLACE] Empty directory will be removed and replaced with symlink
+  [CREATED] Symlink created successfully
+
+--- Upscale Models ---
+  Source: /mnt/c/ai_models/diffusion/model_patches
+  Target: /mnt/c/ai_tools/comfyui-rocm/models/upscale_models
+  [REPLACE] Empty directory will be removed and replaced with symlink
+  [CREATED] Symlink created successfully
+
+--- Video Models (LTX-2.3, Wan2.1, AnimateDiff) ---
+  Source: /mnt/c/ai_models/video
+  Target: /mnt/c/ai_tools/comfyui-rocm/models/video
+  [CREATED] Symlink created successfully
+
+--- Vision / CLIP Vision ---
+  Source: /mnt/c/ai_models/vision
+  Target: /mnt/c/ai_tools/comfyui-rocm/models/clip_vision
+  [REPLACE] Empty directory will be removed and replaced with symlink
+  [CREATED] Symlink created successfully
+
+=== Symlink Verification ===
+total 64
+drwxrwxr-x 16 justin justin 4096  5月  7 13:45 .
+drwxrwxr-x 24 justin justin 4096  5月  7 13:41 ..
+drwxrwxr-x  2 justin justin 4096  5月  7 13:45 audio_encoders
+lrwxrwxrwx  1 justin justin   55  5月  7 13:45 checkpoints -> /mnt/c/ai_models/diffusion/stable-diffusion/checkpoints
+lrwxrwxrwx  1 justin justin   31  5月  7 13:45 clip -> /mnt/c/ai_models/diffusion/clip
+lrwxrwxrwx  1 justin justin   23  5月  7 13:45 clip_vision -> /mnt/c/ai_models/vision
+drwxrwxr-x  2 justin justin 4096  5月  7 13:40 configs
+lrwxrwxrwx  1 justin justin   37  5月  7 13:45 controlnet -> /mnt/c/ai_models/diffusion/controlnet
+drwxrwxr-x  2 justin justin 4096  5月  7 13:45 diffusers
+drwxrwxr-x  2 justin justin 4096  5月  7 13:45 diffusion_models
+lrwxrwxrwx  1 justin justin   37  5月  7 13:45 embeddings -> /mnt/c/ai_models/diffusion/embeddings
+drwxrwxr-x  2 justin justin 4096  5月  7 13:45 frame_interpolation
+drwxrwxr-x  2 justin justin 4096  5月  7 13:45 gligen
+drwxrwxr-x  2 justin justin 4096  5月  7 13:45 hypernetworks
+lrwxrwxrwx  1 justin justin   36  5月  7 13:45 ipadapter -> /mnt/c/ai_models/diffusion/ipadapter
+drwxrwxr-x  2 justin justin 4096  5月  7 13:45 latent_upscale_models
+lrwxrwxrwx  1 justin justin   31  5月  7 13:45 loras -> /mnt/c/ai_models/diffusion/lora
+drwxrwxr-x  2 justin justin 4096  5月  7 13:45 model_patches
+drwxrwxr-x  2 justin justin 4096  5月  7 13:45 optical_flow
+drwxrwxr-x  2 justin justin 4096  5月  7 13:45 photomaker
+drwxrwxr-x  2 justin justin 4096  5月  7 13:45 style_models
+lrwxrwxrwx  1 justin justin   40  5月  7 13:45 text_encoders -> /mnt/c/ai_models/diffusion/text_encoders
+drwxrwxr-x  2 justin justin 4096  5月  7 13:45 unet
+lrwxrwxrwx  1 justin justin   40  5月  7 13:45 upscale_models -> /mnt/c/ai_models/diffusion/model_patches
+lrwxrwxrwx  1 justin justin   47  5月  7 13:45 vae -> /mnt/c/ai_models/diffusion/stable-diffusion/vae
+drwxrwxr-x  2 justin justin 4096  5月  7 13:45 vae_approx
+lrwxrwxrwx  1 justin justin   22  5月  7 13:45 video -> /mnt/c/ai_models/video
+
+LTX-2.3 models accessible via symlink:
+total 55G
+drwxrwxr-x 2 justin justin 4.0K  4月  5 20:20 audio_vae
+drwxrwxr-x 2 justin justin 4.0K  4月  5 20:17 connectors
+drwxrwxr-x 2 justin justin 4.0K  4月  5 20:26 latent_upsampler
+-rw-rw-r-- 1 justin justin  21K  4月  5 20:17 LICENSE
+-rw-rw-r-- 1 justin justin  28G  4月  6 01:01 ltx-2.3-22b-dev-fp8.safetensors
+-rw-rw-r-- 1 justin justin  28G  4月  6 01:07 ltx-2.3-22b-distilled-fp8.safetensors
+-rw-rw-r-- 1 justin justin 5.3K  4月  5 23:22 README.md
+
+================================================================
+Symlinks created. Next: scripts/06_install_safe_comfyui_custom_nodes.sh
+================================================================

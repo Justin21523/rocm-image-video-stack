@@ -1,0 +1,34 @@
+================================================================
+LTX-2.3 MODEL PREPARATION
+Date: 西元2026年05月07日 (週四) 14時07分46秒 CST
+Mode: audit
+================================================================
+
+=== Model Inventory ===
+
+  [OK]      [required] LTX-2.3 Dev FP8 (28G)
+  [OK]      [required] LTX-2.3 Distilled FP8 (28G)
+  [OK-DIR]  [required] Audio VAE directory/ (2 files)
+  [OK-DIR]  [required] Connectors directory/ (1 files)
+  [OK-DIR]  [required] Latent Upsampler directory/ (2 files)
+
+--- Text Encoder (REQUIRED — separate download) ---
+  [MISSING] [required] Gemma-3-12B text encoder — MUST DOWNLOAD BEFORE GENERATION
+            Expected size: ~24.4 GB
+
+--- Supplementary Models ---
+  [OK-SYMLINK] Distilled LoRA (in lora/ltxv/ltx2/ — may already be symlinked)
+  [MISSING] [optional] Spatial Upscaler x2 v1.1
+            Expected size: ~1 GB
+  [MISSING] [fallback] GGUF Q6_K fallback
+            Expected size: ~12 GB
+
+
+================================================================
+LTX-2.3 model audit complete.
+
+To download missing models (requires approval):
+  bash /mnt/c/ai_projects/rocm-image-video-stack/scripts/09_prepare_ltx23_models.sh --download
+
+Report saved to: /mnt/c/ai_projects/rocm-image-video-stack/reports/ltx23_model_audit_20260507_140746.txt
+================================================================

@@ -1,0 +1,95 @@
+# Protected Paths — NEVER Modify, Delete, or Overwrite
+# Scripts must check this list before any write operations
+
+protected_paths:
+  # ComfyUI CUDA installations
+  - /mnt/c/ai_tools/comfyui
+  - /mnt/c/ai_tools/Comfy-LTX-Desktop
+  - /mnt/c/ai_tools/ComfyUI-RookieUI
+
+  # LTX video tools (CUDA)
+  - /mnt/c/ai_tools/LTX-2
+  - /mnt/c/ai_tools/LTX-Video
+  - /mnt/c/ai_tools/LTX-Video-Trainer
+
+  # Other video/audio CUDA tools
+  - /mnt/c/ai_tools/Wan2.1
+  - /mnt/c/ai_tools/AnimateDiff
+  - /mnt/c/ai_tools/RVC
+  - /mnt/c/ai_tools/GPT-SoVITS
+  - /mnt/c/ai_tools/seed-vc
+  - /mnt/c/ai_tools/free-svc
+  - /mnt/c/ai_tools/DiffSinger_v170
+  - /mnt/c/ai_tools/demucs
+  - /mnt/c/ai_tools/so-vits-svc
+
+  # Training tools (CUDA)
+  - /mnt/c/ai_tools/kohya_ss
+  - /mnt/c/ai_tools/SimpleTuner
+  - /mnt/c/ai_tools/finetrainers
+  - /mnt/c/ai_tools/musubi-tuner
+
+  # Image generation (CUDA)
+  - /mnt/c/ai_tools/stable-diffusion-webui
+
+  # 3D tools
+  - /mnt/c/ai_tools/RigAnything
+  - /mnt/c/ai_tools/UniRig
+  - /mnt/c/ai_tools/TripoSR
+
+  # Other tools
+  - /mnt/c/ai_tools/CogKit
+  - /mnt/c/ai_tools/DiffSynth-Studio
+  - /mnt/c/ai_tools/Director
+  - /mnt/c/ai_tools/FireRed-OpenStoryline
+  - /mnt/c/ai_tools/OpenMontage
+  - /mnt/c/ai_tools/OpenUtau
+  - /mnt/c/ai_tools/mcp-automation
+  - /mnt/c/ai_tools/rs-nodes
+  - /mnt/c/ai_tools/custom_nodes
+
+  # Already-built ROCm tools (do not rebuild or modify)
+  - /mnt/c/ai_tools/llama.cpp-rocm
+
+  # Model storage (never move, delete, or overwrite model files)
+  - /mnt/c/ai_models
+  - /mnt/c/ai_cache
+
+  # All existing projects except this one
+  - /mnt/c/ai_projects/animation-ai-studio
+  - /mnt/c/ai_projects/anime-adventure-lab
+  - /mnt/c/ai_projects/gpu-migration-r9700
+  - /mnt/c/ai_projects/image-gen
+  - /mnt/c/ai_projects/video-gen
+  - /mnt/c/ai_projects/video-family-lora-hub
+
+  # Windows user data
+  - /mnt/c/Users
+
+# Protected conda environments (never conda remove, never pip install without activation check)
+protected_conda_envs:
+  - comfyui
+  - kohya_ss
+  - ai_env
+  - audio_env
+  - data_env
+  - base
+
+# Allowed write targets (scripts may only write here)
+allowed_write_targets:
+  - /mnt/c/ai_projects/rocm-image-video-stack/
+  - /mnt/c/ai_tools/comfyui-rocm/
+  - ~/miniconda3/envs/rocm-comfyui-r9700/
+  - ~/miniconda3/envs/rocm-diffusers-r9700/
+  - ~/miniconda3/envs/rocm-video-r9700/
+  - ~/miniconda3/envs/rocm-lora-r9700/
+  - ~/miniconda3/envs/rocm-llamacpp-r9700/
+  - ~/miniconda3/envs/rocm-pytorch-r9700/
+  - ~/miniconda3/envs/rocm-ltx23-r9700/
+
+# New model download targets (explicitly approved downloads only)
+allowed_new_model_dirs:
+  - /mnt/c/ai_models/diffusion/text_encoders/gemma-3-12b/
+  - /mnt/c/ai_models/video/ltx-2/gguf/
+  - /mnt/c/ai_models/video/ltx-2/ic-loras/
+  - /mnt/c/ai_models/video/ltx-2/id-loras/

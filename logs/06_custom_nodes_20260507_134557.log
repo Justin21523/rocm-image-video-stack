@@ -1,0 +1,347 @@
+================================================================
+GREEN-TIER CUSTOM NODE INSTALLATION
+Date: 西元2026年05月07日 (週四) 13時45分57秒 CST
+Conda env: rocm-comfyui-r9700
+================================================================
+
+Constraints file:
+torch==2.11.0+rocm7.2
+torchvision==0.26.0+rocm7.2
+torchaudio==2.11.0+rocm7.2
+
+--- Installing: ComfyUI-Manager ---
+  Cloning https://github.com/ltdrdata/ComfyUI-Manager...
+Cloning into '/mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager'...
+  Installing requirements with constraints...
+Collecting GitPython (from -r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 1))
+  Downloading gitpython-3.1.50-py3-none-any.whl.metadata (14 kB)
+Collecting PyGithub (from -r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 2))
+  Downloading pygithub-2.9.1-py3-none-any.whl.metadata (3.9 kB)
+Collecting matrix-nio (from -r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 3))
+  Downloading matrix_nio-0.25.2-py3-none-any.whl.metadata (6.3 kB)
+Requirement already satisfied: transformers in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from -r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 4)) (5.8.0)
+Requirement already satisfied: huggingface-hub in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from -r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 5)) (1.14.0)
+Requirement already satisfied: typer in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from -r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 6)) (0.25.1)
+Requirement already satisfied: rich in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from -r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 7)) (15.0.0)
+Requirement already satisfied: typing-extensions in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from -r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 8)) (4.15.0)
+Collecting toml (from -r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 9))
+  Downloading toml-0.10.2-py2.py3-none-any.whl.metadata (7.1 kB)
+Collecting uv (from -r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 10))
+  Downloading uv-0.11.11-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (11 kB)
+Collecting chardet (from -r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 11))
+  Downloading chardet-7.4.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (9.4 kB)
+Collecting gitdb<5,>=4.0.1 (from GitPython->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 1))
+  Downloading gitdb-4.0.12-py3-none-any.whl.metadata (1.2 kB)
+Collecting smmap<6,>=3.0.1 (from gitdb<5,>=4.0.1->GitPython->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 1))
+  Downloading smmap-5.0.3-py3-none-any.whl.metadata (4.6 kB)
+Collecting pynacl>=1.4.0 (from PyGithub->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 2))
+  Downloading pynacl-1.6.2-cp38-abi3-manylinux_2_34_x86_64.whl.metadata (10.0 kB)
+Requirement already satisfied: requests>=2.14.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from PyGithub->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 2)) (2.33.1)
+Collecting pyjwt>=2.4.0 (from pyjwt[crypto]>=2.4.0->PyGithub->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 2))
+  Downloading pyjwt-2.12.1-py3-none-any.whl.metadata (4.1 kB)
+Requirement already satisfied: urllib3>=1.26.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from PyGithub->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 2)) (2.6.3)
+Requirement already satisfied: aiohttp~=3.10 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from matrix-nio->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 3)) (3.13.5)
+Collecting aiofiles~=24.1 (from matrix-nio->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 3))
+  Downloading aiofiles-24.1.0-py3-none-any.whl.metadata (10 kB)
+Requirement already satisfied: h11~=0.14 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from matrix-nio->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 3)) (0.16.0)
+Collecting h2~=4.0 (from matrix-nio->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 3))
+  Downloading h2-4.3.0-py3-none-any.whl.metadata (5.1 kB)
+Collecting jsonschema~=4.14 (from matrix-nio->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 3))
+  Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+Collecting unpaddedbase64~=2.1 (from matrix-nio->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 3))
+  Downloading unpaddedbase64-2.1.0-py3-none-any.whl.metadata (1.3 kB)
+Collecting pycryptodome~=3.10 (from matrix-nio->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 3))
+  Downloading pycryptodome-3.23.0-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.4 kB)
+Collecting aiohttp-socks~=0.8 (from matrix-nio->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 3))
+  Downloading aiohttp_socks-0.11.0-py3-none-any.whl.metadata (3.6 kB)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from aiohttp~=3.10->matrix-nio->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 3)) (2.6.1)
+Requirement already satisfied: aiosignal>=1.4.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from aiohttp~=3.10->matrix-nio->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 3)) (1.4.0)
+Requirement already satisfied: attrs>=17.3.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from aiohttp~=3.10->matrix-nio->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 3)) (26.1.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from aiohttp~=3.10->matrix-nio->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 3)) (1.8.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from aiohttp~=3.10->matrix-nio->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 3)) (6.7.1)
+Requirement already satisfied: propcache>=0.2.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from aiohttp~=3.10->matrix-nio->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 3)) (0.4.1)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from aiohttp~=3.10->matrix-nio->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 3)) (1.23.0)
+Collecting python-socks<3.0.0,>=2.4.3 (from python-socks[asyncio]<3.0.0,>=2.4.3->aiohttp-socks~=0.8->matrix-nio->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 3))
+  Downloading python_socks-2.8.1-py3-none-any.whl.metadata (8.2 kB)
+Collecting hyperframe<7,>=6.1 (from h2~=4.0->matrix-nio->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 3))
+  Downloading hyperframe-6.1.0-py3-none-any.whl.metadata (4.3 kB)
+Collecting hpack<5,>=4.1 (from h2~=4.0->matrix-nio->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 3))
+  Downloading hpack-4.1.0-py3-none-any.whl.metadata (4.6 kB)
+Collecting jsonschema-specifications>=2023.03.6 (from jsonschema~=4.14->matrix-nio->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 3))
+  Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+Collecting referencing>=0.28.4 (from jsonschema~=4.14->matrix-nio->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 3))
+  Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting rpds-py>=0.25.0 (from jsonschema~=4.14->matrix-nio->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 3))
+  Downloading rpds_py-0.30.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+Requirement already satisfied: idna>=2.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from yarl<2.0,>=1.17.0->aiohttp~=3.10->matrix-nio->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 3)) (3.13)
+Requirement already satisfied: numpy>=1.17 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from transformers->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 4)) (2.4.3)
+Requirement already satisfied: packaging>=20.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from transformers->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 4)) (26.0)
+Requirement already satisfied: pyyaml>=5.1 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from transformers->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 4)) (6.0.3)
+Requirement already satisfied: regex>=2025.10.22 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from transformers->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 4)) (2026.4.4)
+Requirement already satisfied: tokenizers<=0.23.0,>=0.22.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from transformers->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 4)) (0.22.2)
+Requirement already satisfied: safetensors>=0.4.3 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from transformers->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 4)) (0.7.0)
+Requirement already satisfied: tqdm>=4.27 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from transformers->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 4)) (4.67.3)
+Requirement already satisfied: filelock>=3.10.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from huggingface-hub->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 5)) (3.25.2)
+Requirement already satisfied: fsspec>=2023.5.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from huggingface-hub->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 5)) (2026.2.0)
+Requirement already satisfied: hf-xet<2.0.0,>=1.4.3 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from huggingface-hub->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 5)) (1.5.0)
+Requirement already satisfied: httpx<1,>=0.23.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from huggingface-hub->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 5)) (0.28.1)
+Requirement already satisfied: anyio in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from httpx<1,>=0.23.0->huggingface-hub->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 5)) (4.13.0)
+Requirement already satisfied: certifi in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from httpx<1,>=0.23.0->huggingface-hub->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 5)) (2026.4.22)
+Requirement already satisfied: httpcore==1.* in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from httpx<1,>=0.23.0->huggingface-hub->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 5)) (1.0.9)
+Requirement already satisfied: click>=8.2.1 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from typer->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 6)) (8.3.3)
+Requirement already satisfied: shellingham>=1.3.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from typer->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 6)) (1.5.4)
+Requirement already satisfied: annotated-doc>=0.0.2 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from typer->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 6)) (0.0.4)
+Requirement already satisfied: markdown-it-py>=2.2.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from rich->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 7)) (4.1.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from rich->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 7)) (2.20.0)
+Requirement already satisfied: mdurl~=0.1 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from markdown-it-py>=2.2.0->rich->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 7)) (0.1.2)
+Collecting cryptography>=3.4.0 (from pyjwt[crypto]>=2.4.0->PyGithub->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 2))
+  Downloading cryptography-48.0.0-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.3 kB)
+Collecting cffi>=2.0.0 (from cryptography>=3.4.0->pyjwt[crypto]>=2.4.0->PyGithub->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 2))
+  Downloading cffi-2.0.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.6 kB)
+Collecting pycparser (from cffi>=2.0.0->cryptography>=3.4.0->pyjwt[crypto]>=2.4.0->PyGithub->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 2))
+  Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+Requirement already satisfied: charset_normalizer<4,>=2 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from requests>=2.14.0->PyGithub->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Manager/requirements.txt (line 2)) (3.4.7)
+Downloading gitpython-3.1.50-py3-none-any.whl (212 kB)
+Downloading gitdb-4.0.12-py3-none-any.whl (62 kB)
+Downloading smmap-5.0.3-py3-none-any.whl (24 kB)
+Downloading pygithub-2.9.1-py3-none-any.whl (449 kB)
+Downloading matrix_nio-0.25.2-py3-none-any.whl (181 kB)
+Downloading aiofiles-24.1.0-py3-none-any.whl (15 kB)
+Downloading aiohttp_socks-0.11.0-py3-none-any.whl (10 kB)
+Downloading h2-4.3.0-py3-none-any.whl (61 kB)
+Downloading hpack-4.1.0-py3-none-any.whl (34 kB)
+Downloading hyperframe-6.1.0-py3-none-any.whl (13 kB)
+Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+Downloading pycryptodome-3.23.0-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 4.1 MB/s  0:00:00
+Downloading python_socks-2.8.1-py3-none-any.whl (55 kB)
+Downloading unpaddedbase64-2.1.0-py3-none-any.whl (6.1 kB)
+Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB)
+Downloading uv-0.11.11-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (24.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 24.6/24.6 MB 5.7 MB/s  0:00:04
+Downloading chardet-7.4.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (883 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 883.4/883.4 kB 5.9 MB/s  0:00:00
+Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+Downloading pyjwt-2.12.1-py3-none-any.whl (29 kB)
+Downloading cryptography-48.0.0-cp311-abi3-manylinux_2_34_x86_64.whl (4.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 6.2 MB/s  0:00:00
+Downloading cffi-2.0.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (215 kB)
+Downloading pynacl-1.6.2-cp38-abi3-manylinux_2_34_x86_64.whl (1.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 6.1 MB/s  0:00:00
+Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+Downloading rpds_py-0.30.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (390 kB)
+Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+Installing collected packages: uv, unpaddedbase64, toml, smmap, rpds-py, python-socks, pyjwt, pycryptodome, pycparser, hyperframe, hpack, chardet, aiofiles, referencing, h2, gitdb, cffi, pynacl, jsonschema-specifications, GitPython, cryptography, aiohttp-socks, jsonschema, PyGithub, matrix-nio
+
+Successfully installed GitPython-3.1.50 PyGithub-2.9.1 aiofiles-24.1.0 aiohttp-socks-0.11.0 cffi-2.0.0 chardet-7.4.3 cryptography-48.0.0 gitdb-4.0.12 h2-4.3.0 hpack-4.1.0 hyperframe-6.1.0 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 matrix-nio-0.25.2 pycparser-3.0 pycryptodome-3.23.0 pyjwt-2.12.1 pynacl-1.6.2 python-socks-2.8.1 referencing-0.37.0 rpds-py-0.30.0 smmap-5.0.3 toml-0.10.2 unpaddedbase64-2.1.0 uv-0.11.11
+
+  [OK] ROCm torch confirmed: 2.11.0+rocm7.2
+
+--- Installing: rgthree-comfy ---
+  Cloning https://github.com/rgthree/rgthree-comfy...
+Cloning into '/mnt/c/ai_tools/comfyui-rocm/custom_nodes/rgthree-comfy'...
+  Installing requirements with constraints...
+  [OK] ROCm torch confirmed: 2.11.0+rocm7.2
+
+--- Installing: ComfyUI-Custom-Scripts ---
+  Cloning https://github.com/pythongosssss/ComfyUI-Custom-Scripts...
+Cloning into '/mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-Custom-Scripts'...
+  No requirements.txt needed
+  [OK] ROCm torch confirmed: 2.11.0+rocm7.2
+
+--- Installing: ComfyUI_essentials ---
+  Cloning https://github.com/cubiq/ComfyUI_essentials...
+Cloning into '/mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials'...
+  Installing requirements with constraints...
+Collecting numba (from -r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 1))
+  Downloading numba-0.65.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.9 kB)
+Collecting colour-science (from -r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 2))
+  Downloading colour_science-0.4.7-py3-none-any.whl.metadata (59 kB)
+Collecting rembg (from -r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 3))
+  Downloading rembg-2.0.75-py3-none-any.whl.metadata (17 kB)
+Collecting pixeloe (from -r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 4))
+  Downloading pixeloe-0.1.4.tar.gz (30 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting transparent-background (from -r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5))
+  Downloading transparent_background-1.3.4-py3-none-any.whl.metadata (18 kB)
+Collecting llvmlite<0.48,>=0.47.0dev0 (from numba->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 1))
+  Downloading llvmlite-0.47.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.0 kB)
+Requirement already satisfied: numpy>=1.22 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from numba->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 1)) (2.4.3)
+Requirement already satisfied: jsonschema<5.0.0,>=4.25.1 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from rembg->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 3)) (4.26.0)
+Requirement already satisfied: pillow<13.0.0,>=12.1.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from rembg->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 3)) (12.1.1)
+Collecting pooch<2.0.0,>=1.8.2 (from rembg->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 3))
+  Downloading pooch-1.9.0-py3-none-any.whl.metadata (10 kB)
+Collecting pymatting<2.0.0,>=1.1.14 (from rembg->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 3))
+  Downloading pymatting-1.1.15-py3-none-any.whl.metadata (8.7 kB)
+Collecting scikit-image<0.27.0,>=0.26.0 (from rembg->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 3))
+  Downloading scikit_image-0.26.0-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (15 kB)
+Requirement already satisfied: scipy<2.0.0,>=1.16.3 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from rembg->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 3)) (1.17.1)
+Requirement already satisfied: tqdm<5.0.0,>=4.67.1 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from rembg->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 3)) (4.67.3)
+Requirement already satisfied: attrs>=22.2.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from jsonschema<5.0.0,>=4.25.1->rembg->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 3)) (26.1.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from jsonschema<5.0.0,>=4.25.1->rembg->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 3)) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from jsonschema<5.0.0,>=4.25.1->rembg->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 3)) (0.37.0)
+Requirement already satisfied: rpds-py>=0.25.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from jsonschema<5.0.0,>=4.25.1->rembg->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 3)) (0.30.0)
+Collecting platformdirs>=2.5.0 (from pooch<2.0.0,>=1.8.2->rembg->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 3))
+  Downloading platformdirs-4.9.6-py3-none-any.whl.metadata (4.7 kB)
+Requirement already satisfied: packaging>=20.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from pooch<2.0.0,>=1.8.2->rembg->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 3)) (26.0)
+Requirement already satisfied: requests>=2.19.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from pooch<2.0.0,>=1.8.2->rembg->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 3)) (2.33.1)
+Requirement already satisfied: networkx>=3.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from scikit-image<0.27.0,>=0.26.0->rembg->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 3)) (3.6.1)
+Collecting imageio!=2.35.0,>=2.33 (from scikit-image<0.27.0,>=0.26.0->rembg->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 3))
+  Using cached imageio-2.37.3-py3-none-any.whl.metadata (9.7 kB)
+Collecting tifffile>=2022.8.12 (from scikit-image<0.27.0,>=0.26.0->rembg->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 3))
+  Downloading tifffile-2026.3.3-py3-none-any.whl.metadata (31 kB)
+Collecting lazy-loader>=0.4 (from scikit-image<0.27.0,>=0.26.0->rembg->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 3))
+  Downloading lazy_loader-0.5-py3-none-any.whl.metadata (5.9 kB)
+Collecting opencv-python (from pixeloe->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 4))
+  Using cached opencv_python-4.13.0.92-cp37-abi3-manylinux_2_28_x86_64.whl.metadata (19 kB)
+Requirement already satisfied: torch in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from pixeloe->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 4)) (2.11.0+rocm7.2)
+Requirement already satisfied: kornia in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from pixeloe->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 4)) (0.8.2)
+Requirement already satisfied: torchvision>=0.8.2 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5)) (0.26.0+rocm7.2)
+Collecting timm>=1.0.3 (from transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5))
+  Downloading timm-1.0.26-py3-none-any.whl.metadata (39 kB)
+Collecting gdown>=4.5.4 (from transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5))
+  Downloading gdown-6.0.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting wget>=3.2 (from transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5))
+  Downloading wget-3.2.zip (10 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting easydict>=1.10 (from transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5))
+  Downloading easydict-1.13-py3-none-any.whl.metadata (4.2 kB)
+Requirement already satisfied: pyyaml>=6.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5)) (6.0.3)
+Collecting albumentations>=1.3.1 (from transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5))
+  Downloading albumentations-2.0.8-py3-none-any.whl.metadata (43 kB)
+Collecting albucore>=0.0.16 (from transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5))
+  Downloading albucore-0.1.6-py3-none-any.whl.metadata (15 kB)
+Collecting numkong>=7.4.5 (from albucore>=0.0.16->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5))
+  Downloading numkong-7.6.0-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (85 kB)
+Collecting stringzilla>=3.10.4 (from albucore>=0.0.16->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5))
+  Downloading stringzilla-4.6.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl.metadata (121 kB)
+Requirement already satisfied: pydantic>=2.9.2 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from albumentations>=1.3.1->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5)) (2.13.4)
+Collecting albucore>=0.0.16 (from transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5))
+  Downloading albucore-0.0.24-py3-none-any.whl.metadata (5.3 kB)
+Collecting opencv-python-headless>=4.9.0.80 (from albumentations>=1.3.1->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5))
+  Downloading opencv_python_headless-4.13.0.92-cp37-abi3-manylinux_2_28_x86_64.whl.metadata (19 kB)
+Collecting simsimd>=5.9.2 (from albucore>=0.0.16->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5))
+  Downloading simsimd-6.5.16-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (70 kB)
+Collecting beautifulsoup4 (from gdown>=4.5.4->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5))
+  Downloading beautifulsoup4-4.14.3-py3-none-any.whl.metadata (3.8 kB)
+Requirement already satisfied: filelock in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from gdown>=4.5.4->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5)) (3.25.2)
+Requirement already satisfied: typing-extensions>=4.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from gdown>=4.5.4->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5)) (4.15.0)
+Requirement already satisfied: kornia_rs>=0.1.9 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from kornia->pixeloe->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 4)) (0.1.11)
+Requirement already satisfied: annotated-types>=0.6.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from pydantic>=2.9.2->albumentations>=1.3.1->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5)) (0.7.0)
+Requirement already satisfied: pydantic-core==2.46.4 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from pydantic>=2.9.2->albumentations>=1.3.1->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5)) (2.46.4)
+Requirement already satisfied: typing-inspection>=0.4.2 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from pydantic>=2.9.2->albumentations>=1.3.1->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5)) (0.4.2)
+Requirement already satisfied: charset_normalizer<4,>=2 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from requests>=2.19.0->pooch<2.0.0,>=1.8.2->rembg->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 3)) (3.4.7)
+Requirement already satisfied: idna<4,>=2.5 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from requests>=2.19.0->pooch<2.0.0,>=1.8.2->rembg->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 3)) (3.13)
+Requirement already satisfied: urllib3<3,>=1.26 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from requests>=2.19.0->pooch<2.0.0,>=1.8.2->rembg->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 3)) (2.6.3)
+Requirement already satisfied: certifi>=2023.5.7 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from requests>=2.19.0->pooch<2.0.0,>=1.8.2->rembg->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 3)) (2026.4.22)
+Requirement already satisfied: huggingface_hub in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from timm>=1.0.3->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5)) (1.14.0)
+Requirement already satisfied: safetensors in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from timm>=1.0.3->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5)) (0.7.0)
+Requirement already satisfied: setuptools<82 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from torch->pixeloe->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 4)) (70.2.0)
+Requirement already satisfied: sympy>=1.13.3 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from torch->pixeloe->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 4)) (1.14.0)
+Requirement already satisfied: jinja2 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from torch->pixeloe->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 4)) (3.1.6)
+Requirement already satisfied: fsspec>=0.8.5 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from torch->pixeloe->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 4)) (2026.2.0)
+Requirement already satisfied: triton-rocm==3.6.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from torch->pixeloe->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 4)) (3.6.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from sympy>=1.13.3->torch->pixeloe->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 4)) (1.3.0)
+Collecting soupsieve>=1.6.1 (from beautifulsoup4->gdown>=4.5.4->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5))
+  Downloading soupsieve-2.8.3-py3-none-any.whl.metadata (4.6 kB)
+Requirement already satisfied: hf-xet<2.0.0,>=1.4.3 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from huggingface_hub->timm>=1.0.3->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5)) (1.5.0)
+Requirement already satisfied: httpx<1,>=0.23.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from huggingface_hub->timm>=1.0.3->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5)) (0.28.1)
+Requirement already satisfied: typer>=0.20.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from huggingface_hub->timm>=1.0.3->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5)) (0.25.1)
+Requirement already satisfied: anyio in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from httpx<1,>=0.23.0->huggingface_hub->timm>=1.0.3->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5)) (4.13.0)
+Requirement already satisfied: httpcore==1.* in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from httpx<1,>=0.23.0->huggingface_hub->timm>=1.0.3->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5)) (1.0.9)
+Requirement already satisfied: h11>=0.16 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from httpcore==1.*->httpx<1,>=0.23.0->huggingface_hub->timm>=1.0.3->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5)) (0.16.0)
+Requirement already satisfied: click>=8.2.1 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from typer>=0.20.0->huggingface_hub->timm>=1.0.3->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5)) (8.3.3)
+Requirement already satisfied: shellingham>=1.3.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from typer>=0.20.0->huggingface_hub->timm>=1.0.3->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5)) (1.5.4)
+Requirement already satisfied: rich>=13.8.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from typer>=0.20.0->huggingface_hub->timm>=1.0.3->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5)) (15.0.0)
+Requirement already satisfied: annotated-doc>=0.0.2 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from typer>=0.20.0->huggingface_hub->timm>=1.0.3->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5)) (0.0.4)
+Requirement already satisfied: markdown-it-py>=2.2.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from rich>=13.8.0->typer>=0.20.0->huggingface_hub->timm>=1.0.3->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5)) (4.1.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from rich>=13.8.0->typer>=0.20.0->huggingface_hub->timm>=1.0.3->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5)) (2.20.0)
+Requirement already satisfied: mdurl~=0.1 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from markdown-it-py>=2.2.0->rich>=13.8.0->typer>=0.20.0->huggingface_hub->timm>=1.0.3->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5)) (0.1.2)
+Requirement already satisfied: MarkupSafe>=2.0 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from jinja2->torch->pixeloe->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 4)) (3.0.3)
+Collecting PySocks!=1.5.7,>=1.5.6 (from requests[socks]->gdown>=4.5.4->transparent-background->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI_essentials/requirements.txt (line 5))
+  Downloading PySocks-1.7.1-py3-none-any.whl.metadata (13 kB)
+Downloading numba-0.65.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.7/3.7 MB 3.9 MB/s  0:00:01
+Downloading llvmlite-0.47.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (56.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.3/56.3 MB 7.2 MB/s  0:00:07
+Downloading colour_science-0.4.7-py3-none-any.whl (9.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.1/9.1 MB 8.0 MB/s  0:00:01
+Downloading rembg-2.0.75-py3-none-any.whl (45 kB)
+Downloading pooch-1.9.0-py3-none-any.whl (67 kB)
+Downloading pymatting-1.1.15-py3-none-any.whl (54 kB)
+Downloading scikit_image-0.26.0-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (13.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.7/13.7 MB 8.1 MB/s  0:00:01
+Downloading transparent_background-1.3.4-py3-none-any.whl (33 kB)
+Downloading albumentations-2.0.8-py3-none-any.whl (369 kB)
+Downloading albucore-0.0.24-py3-none-any.whl (15 kB)
+Downloading easydict-1.13-py3-none-any.whl (6.8 kB)
+Downloading gdown-6.0.0-py3-none-any.whl (18 kB)
+Using cached imageio-2.37.3-py3-none-any.whl (317 kB)
+Downloading lazy_loader-0.5-py3-none-any.whl (8.0 kB)
+Using cached opencv_python-4.13.0.92-cp37-abi3-manylinux_2_28_x86_64.whl (72.9 MB)
+Downloading opencv_python_headless-4.13.0.92-cp37-abi3-manylinux_2_28_x86_64.whl (60.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.4/60.4 MB 5.0 MB/s  0:00:12
+Downloading platformdirs-4.9.6-py3-none-any.whl (21 kB)
+Downloading simsimd-6.5.16-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (583 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 583.8/583.8 kB 6.5 MB/s  0:00:00
+Downloading stringzilla-4.6.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 8.3 MB/s  0:00:00
+Downloading tifffile-2026.3.3-py3-none-any.whl (243 kB)
+Downloading timm-1.0.26-py3-none-any.whl (2.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.6/2.6 MB 9.0 MB/s  0:00:00
+Downloading beautifulsoup4-4.14.3-py3-none-any.whl (107 kB)
+Downloading soupsieve-2.8.3-py3-none-any.whl (37 kB)
+Downloading PySocks-1.7.1-py3-none-any.whl (16 kB)
+Building wheels for collected packages: pixeloe, wget
+  Building wheel for pixeloe (pyproject.toml): started
+  Building wheel for pixeloe (pyproject.toml): finished with status 'done'
+  Created wheel for pixeloe: filename=pixeloe-0.1.4-py3-none-any.whl size=33644 sha256=05dc71c4596df280ff08ef9a4acccdb91606c0506336e823416fa2d60320358a
+  Stored in directory: /mnt/c/ai_cache/pip/wheels/b4/0d/e6/f929662b3d02bb74d8575620cf3e99d4cde541cf2a04a09501
+  Building wheel for wget (pyproject.toml): started
+  Building wheel for wget (pyproject.toml): finished with status 'done'
+  Created wheel for wget: filename=wget-3.2-py3-none-any.whl size=9685 sha256=3160feeb4b4048cb9a207929bebdb36fba52284f5bb74add14defefae1671a5a
+  Stored in directory: /mnt/c/ai_cache/pip/wheels/40/b3/0f/a40dbd1c6861731779f62cc4babcb234387e11d697df70ee97
+Successfully built pixeloe wget
+Installing collected packages: wget, simsimd, easydict, tifffile, stringzilla, soupsieve, PySocks, platformdirs, opencv-python-headless, opencv-python, llvmlite, lazy-loader, imageio, colour-science, scikit-image, pooch, numba, beautifulsoup4, albucore, pymatting, gdown, albumentations, rembg, pixeloe, timm, transparent-background
+
+Successfully installed PySocks-1.7.1 albucore-0.0.24 albumentations-2.0.8 beautifulsoup4-4.14.3 colour-science-0.4.7 easydict-1.13 gdown-6.0.0 imageio-2.37.3 lazy-loader-0.5 llvmlite-0.47.0 numba-0.65.1 opencv-python-4.13.0.92 opencv-python-headless-4.13.0.92 pixeloe-0.1.4 platformdirs-4.9.6 pooch-1.9.0 pymatting-1.1.15 rembg-2.0.75 scikit-image-0.26.0 simsimd-6.5.16 soupsieve-2.8.3 stringzilla-4.6.1 tifffile-2026.3.3 timm-1.0.26 transparent-background-1.3.4 wget-3.2
+
+  [OK] ROCm torch confirmed: 2.11.0+rocm7.2
+
+--- Installing: ComfyUI-VideoHelperSuite ---
+  Cloning https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite...
+Cloning into '/mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-VideoHelperSuite'...
+  Installing requirements with constraints...
+Requirement already satisfied: opencv-python in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from -r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-VideoHelperSuite/requirements.txt (line 1)) (4.13.0.92)
+Collecting imageio-ffmpeg (from -r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-VideoHelperSuite/requirements.txt (line 2))
+  Using cached imageio_ffmpeg-0.6.0-py3-none-manylinux2014_x86_64.whl.metadata (1.5 kB)
+Requirement already satisfied: numpy>=2 in /home/justin/miniconda3/envs/rocm-comfyui-r9700/lib/python3.11/site-packages (from opencv-python->-r /mnt/c/ai_tools/comfyui-rocm/custom_nodes/ComfyUI-VideoHelperSuite/requirements.txt (line 1)) (2.4.3)
+Using cached imageio_ffmpeg-0.6.0-py3-none-manylinux2014_x86_64.whl (29.5 MB)
+Installing collected packages: imageio-ffmpeg
+Successfully installed imageio-ffmpeg-0.6.0
+
+  [OK] ROCm torch confirmed: 2.11.0+rocm7.2
+
+=== Final torch version check ===
+PyTorch: 2.11.0+rocm7.2
+CUDA available: True
+HIP: 7.2.26015
+
+
+================================================================
+Green-tier nodes installed.
+
+DO NOT install ComfyUI-LTXVideo yet.
+First validate ComfyUI startup and SDXL generation (Tests 2 and 3).
+Then run scripts/09_prepare_ltx23_models.sh to install LTX nodes.
+================================================================

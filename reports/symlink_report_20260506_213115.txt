@@ -1,0 +1,105 @@
+================================================================
+MODEL SYMLINK REPORT — READ ONLY
+Date: 西元2026年05月06日 (週三) 21時31分15秒 CST
+Source: /mnt/c/ai_models
+Target: /mnt/c/ai_tools/comfyui-rocm/models
+================================================================
+
+NOTE: These are proposed symlinks. No symlinks are created here.
+      Run scripts/05_setup_comfyui_model_symlinks.sh (with approval) to apply.
+
+=== Proposed Symlink Map ===
+
+--- Checkpoints (SDXL, SD 1.5) ---
+  Source:   /mnt/c/ai_models/diffusion/stable-diffusion/checkpoints  [EXISTS, 114G]
+  Target:   /mnt/c/ai_tools/comfyui-rocm/models/checkpoints  [DOES NOT EXIST — safe to create]
+  Status:   CREATE SYMLINK
+  Command:  ln -sfn '/mnt/c/ai_models/diffusion/stable-diffusion/checkpoints' '/mnt/c/ai_tools/comfyui-rocm/models/checkpoints'
+
+--- LoRA ---
+  Source:   /mnt/c/ai_models/diffusion/lora  [EXISTS, 88G]
+  Target:   /mnt/c/ai_tools/comfyui-rocm/models/loras  [DOES NOT EXIST — safe to create]
+  Status:   CREATE SYMLINK
+  Command:  ln -sfn '/mnt/c/ai_models/diffusion/lora' '/mnt/c/ai_tools/comfyui-rocm/models/loras'
+
+--- VAE ---
+  Source:   /mnt/c/ai_models/diffusion/stable-diffusion/vae  [EXISTS, 5.5G]
+  Target:   /mnt/c/ai_tools/comfyui-rocm/models/vae  [DOES NOT EXIST — safe to create]
+  Status:   CREATE SYMLINK
+  Command:  ln -sfn '/mnt/c/ai_models/diffusion/stable-diffusion/vae' '/mnt/c/ai_tools/comfyui-rocm/models/vae'
+
+--- CLIP ---
+  Source:   /mnt/c/ai_models/diffusion/clip  [EXISTS, 13G]
+  Target:   /mnt/c/ai_tools/comfyui-rocm/models/clip  [DOES NOT EXIST — safe to create]
+  Status:   CREATE SYMLINK
+  Command:  ln -sfn '/mnt/c/ai_models/diffusion/clip' '/mnt/c/ai_tools/comfyui-rocm/models/clip'
+
+--- Text Encoders (incl. Gemma-3-12B after download) ---
+  Source:   /mnt/c/ai_models/diffusion/text_encoders  [EXISTS, 107G]
+  Target:   /mnt/c/ai_tools/comfyui-rocm/models/text_encoders  [DOES NOT EXIST — safe to create]
+  Status:   CREATE SYMLINK
+  Command:  ln -sfn '/mnt/c/ai_models/diffusion/text_encoders' '/mnt/c/ai_tools/comfyui-rocm/models/text_encoders'
+
+--- ControlNet ---
+  Source:   /mnt/c/ai_models/diffusion/controlnet  [EXISTS, 40G]
+  Target:   /mnt/c/ai_tools/comfyui-rocm/models/controlnet  [DOES NOT EXIST — safe to create]
+  Status:   CREATE SYMLINK
+  Command:  ln -sfn '/mnt/c/ai_models/diffusion/controlnet' '/mnt/c/ai_tools/comfyui-rocm/models/controlnet'
+
+--- IP-Adapter ---
+  Source:   /mnt/c/ai_models/diffusion/ipadapter  [EXISTS, 2.9G]
+  Target:   /mnt/c/ai_tools/comfyui-rocm/models/ipadapter  [DOES NOT EXIST — safe to create]
+  Status:   CREATE SYMLINK
+  Command:  ln -sfn '/mnt/c/ai_models/diffusion/ipadapter' '/mnt/c/ai_tools/comfyui-rocm/models/ipadapter'
+
+--- Embeddings / Textual Inversions ---
+  Source:   /mnt/c/ai_models/diffusion/embeddings  [EXISTS, 4.0K]
+  Target:   /mnt/c/ai_tools/comfyui-rocm/models/embeddings  [DOES NOT EXIST — safe to create]
+  Status:   CREATE SYMLINK
+  Command:  ln -sfn '/mnt/c/ai_models/diffusion/embeddings' '/mnt/c/ai_tools/comfyui-rocm/models/embeddings'
+
+--- Upscale Models ---
+  Source:   /mnt/c/ai_models/diffusion/model_patches  [EXISTS, 2.9G]
+  Target:   /mnt/c/ai_tools/comfyui-rocm/models/upscale_models  [DOES NOT EXIST — safe to create]
+  Status:   CREATE SYMLINK
+  Command:  ln -sfn '/mnt/c/ai_models/diffusion/model_patches' '/mnt/c/ai_tools/comfyui-rocm/models/upscale_models'
+
+--- Video Models (LTX-2.3, Wan2.1, AnimateDiff, etc.) ---
+  Source:   /mnt/c/ai_models/video  [EXISTS, 158G]
+  Target:   /mnt/c/ai_tools/comfyui-rocm/models/video  [DOES NOT EXIST — safe to create]
+  Status:   CREATE SYMLINK
+  Command:  ln -sfn '/mnt/c/ai_models/video' '/mnt/c/ai_tools/comfyui-rocm/models/video'
+
+--- Vision / CLIP Vision ---
+  Source:   /mnt/c/ai_models/vision  [EXISTS, 11G]
+  Target:   /mnt/c/ai_tools/comfyui-rocm/models/clip_vision  [DOES NOT EXIST — safe to create]
+  Status:   CREATE SYMLINK
+  Command:  ln -sfn '/mnt/c/ai_models/vision' '/mnt/c/ai_tools/comfyui-rocm/models/clip_vision'
+
+=== LTX-2.3 Specific Model Inventory ===
+Directory: /mnt/c/ai_models/video/ltx-2
+  total 55G
+  drwxrwxr-x 2 justin justin 4.0K  4月  5 20:20 audio_vae
+  drwxrwxr-x 2 justin justin 4.0K  4月  5 20:17 connectors
+  drwxrwxr-x 2 justin justin 4.0K  4月  5 20:26 latent_upsampler
+  -rw-rw-r-- 1 justin justin  21K  4月  5 20:17 LICENSE
+  -rw-rw-r-- 1 justin justin  28G  4月  6 01:01 ltx-2.3-22b-dev-fp8.safetensors
+  -rw-rw-r-- 1 justin justin  28G  4月  6 01:07 ltx-2.3-22b-distilled-fp8.safetensors
+  -rw-rw-r-- 1 justin justin 5.3K  4月  5 23:22 README.md
+
+Required files check:
+  [OK]      ltx-2.3-22b-dev-fp8.safetensors (28G)
+  [OK]      ltx-2.3-22b-distilled-fp8.safetensors (28G)
+  [OK]      audio_vae/ (2 files)
+  [OK]      connectors/ (1 files)
+  [OK]      latent_upsampler/ (2 files)
+
+Gemma-3-12B text encoder check:
+  [MISSING] Gemma-3-12B text encoder — REQUIRED before first LTX generation
+            Download ~24.4 GB from: Comfy-Org/ltx-2 on Hugging Face
+
+================================================================
+Report complete. No symlinks were created.
+To apply symlinks: bash scripts/05_setup_comfyui_model_symlinks.sh
+Report saved to: /mnt/c/ai_projects/rocm-image-video-stack/reports/symlink_report_20260506_213115.txt
+================================================================

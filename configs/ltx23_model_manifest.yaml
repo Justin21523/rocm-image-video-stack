@@ -1,0 +1,187 @@
+# LTX-2.3 Model Manifest
+# AMD Radeon AI PRO R9700 — Model Inventory and Download Plan
+
+base_path: /mnt/c/ai_models/video/ltx-2
+text_encoders_path: /mnt/c/ai_models/diffusion/text_encoders
+
+models:
+  # ===== Core Model Weights =====
+
+  - name: "LTX-2.3 22B Dev FP8"
+    filename: ltx-2.3-22b-dev-fp8.safetensors
+    size_gb: 29
+    local_path: /mnt/c/ai_models/video/ltx-2/ltx-2.3-22b-dev-fp8.safetensors
+    hf_repo: Lightricks/LTX-2.3
+    status: downloaded
+    priority: 1
+    notes: >
+      FP8 weights file. gfx1201 FP8 compute broken; if ComfyUI-LTXVideo
+      dequantizes to BF16 on load, works. Otherwise use GGUF fallback.
+    fp8_compute_risk: high
+
+  - name: "LTX-2.3 22B Distilled FP8"
+    filename: ltx-2.3-22b-distilled-fp8.safetensors
+    size_gb: 29.5
+    local_path: /mnt/c/ai_models/video/ltx-2/ltx-2.3-22b-distilled-fp8.safetensors
+    hf_repo: Lightricks/LTX-2.3
+    status: downloaded
+    priority: 1
+    notes: >
+      Distilled model; 8-step inference; CFG 1.0. Faster and recommended as
+      first test. Same FP8 compute risk as dev model.
+    fp8_compute_risk: high
+
+  # ===== Supporting Directories =====
+
+  - name: "Audio VAE"
+    filename: audio_vae/
+    size_gb: ~1
+    local_path: /mnt/c/ai_models/video/ltx-2/audio_vae/
+    hf_repo: Lightricks/LTX-2.3
+    status: downloaded
+    priority: 1
+    notes: Required for audio-video generation output.
+
+  - name: "Connectors Directory"
+    filename: connectors/
+    size_gb: ~0
+    local_path: /mnt/c/ai_models/video/ltx-2/connectors/
+    hf_repo: Lightricks/LTX-2.3
+    status: downloaded_config_only
+    priority: 1
+    notes: >
+      Directory contains only config.json — no weight files.
+      Actual connector weights are at text_encoders/ltx/ltx-2.3_text_projection_bf16.safetensors (2.2 GB).
+      This is correct; the connector architecture is defined here but weights live in text_encoders/ltx/.
+
+  - name: "Latent Upsampler Directory"
+    filename: latent_upsampler/
+    size_gb: ~0.5
+    local_path: /mnt/c/ai_models/video/ltx-2/latent_upsampler/
+    hf_repo: Lightricks/LTX-2.3
+    status: downloaded_verify_contents
+    priority: 1
+    notes: Directory exists; verify actual .safetensors files inside.
+
+  # ===== Text Encoder (CONFIRMED DOWNLOADED) =====
+
+  - name: "Gemma-3-12B Text Encoder (FP4 Mixed)"
+    filename: gemma_3_12B_it_fp4_mixed.safetensors
+    size_gb: 8.8
+    local_path: /mnt/c/ai_models/diffusion/text_encoders/split_files/text_encoders/gemma_3_12B_it_fp4_mixed.safetensors
+    hf_repo: Comfy-Org/ltx-2
+    status: downloaded
+    priority: 1
+    notes: >
+      FP4 mixed-precision quantized variant (8.8 GB). Already downloaded and
+      in use by CUDA ComfyUI. The text_encoders/ symlink in comfyui-rocm will
+      provide access to this file automatically. No download required.
+      Full BF16 sharded version (23 GB in 5 HF shards) also exists at
+      /mnt/c/ai_models/diffusion/text_encoders/split_files/text_encoders/gemma_3_12B_it_*.safetensors
+
+  - name: "LTX-2.3 Text Projection Connector (BF16)"
+    filename: ltx-2.3_text_projection_bf16.safetensors
+    size_gb: 2.2
+    local_path: /mnt/c/ai_models/diffusion/text_encoders/ltx/ltx-2.3_text_projection_bf16.safetensors
+    hf_repo: Lightricks/LTX-2.3
+    status: downloaded
+    priority: 1
+    notes: >
+      Connector weights bridging Gemma-3-12B text encoder to LTX-2.3 video DiT.
+      Located at text_encoders/ltx/ NOT in video/ltx-2/connectors/.
+      The connectors/ directory at ltx-2/ only contains config.json — this file
+      is the actual connector weight that ComfyUI-LTXVideo loads.
+
+  # ===== Distilled LoRA (RECOMMENDED — NOT YET DOWNLOADED) =====
+
+  - name: "LTX-2.3 Distilled LoRA"
+    filename: ltx-2.3-22b-distilled-lora-384.safetensors
+    size_gb: 7.1
+    local_path: /mnt/c/ai_models/diffusion/lora/ltxv/ltx2/ltx-2.3-22b-distilled-lora-384.safetensors
+    hf_repo: Lightricks/LTX-2.3
+    status: downloaded
+    priority: 2
+    notes: >
+      384 refers to latent dimension, NOT file size (actual: 7.1 GB).
+      Present at /mnt/c/ai_models/diffusion/lora/ltxv/ltx2/ — accessible via
+      comfyui-rocm models/loras symlink. Full-weight LoRA for the 22B distilled model.
+    download_command: >
+      huggingface-cli download Lightricks/LTX-2.3
+      ltx-2.3-22b-distilled-lora-384.safetensors
+      --local-dir /mnt/c/ai_models/video/ltx-2/
+
+  # ===== Spatial Upscaler (OPTIONAL) =====
+
+  - name: "LTX-2.3 Spatial Upscaler x2 v1.1"
+    filename: ltx-2.3-spatial-upscaler-x2-1.1.safetensors
+    size_gb: ~1
+    local_path: /mnt/c/ai_models/video/ltx-2/ltx-2.3-spatial-upscaler-x2-1.1.safetensors
+    hf_repo: Lightricks/LTX-2.3
+    status: missing_optional
+    priority: 3
+    download_command: >
+      huggingface-cli download Lightricks/LTX-2.3
+      ltx-2.3-spatial-upscaler-x2-1.1.safetensors
+      --local-dir /mnt/c/ai_models/video/ltx-2/
+
+  - name: "LTX-2.3 Spatial Upscaler x1.5 v1.0"
+    filename: ltx-2.3-spatial-upscaler-x1.5-1.0.safetensors
+    size_gb: ~0.5
+    local_path: /mnt/c/ai_models/video/ltx-2/ltx-2.3-spatial-upscaler-x1.5-1.0.safetensors
+    hf_repo: Lightricks/LTX-2.3
+    status: missing_optional
+    priority: 3
+
+  - name: "LTX-2.3 Temporal Upscaler x2 v1.0"
+    filename: ltx-2.3-temporal-upscaler-x2-1.0.safetensors
+    size_gb: ~0.5
+    local_path: /mnt/c/ai_models/video/ltx-2/ltx-2.3-temporal-upscaler-x2-1.0.safetensors
+    hf_repo: Lightricks/LTX-2.3
+    status: missing_optional
+    priority: 4
+
+  # ===== IC-LoRAs (OPTIONAL — Phase 8) =====
+
+  - name: "IC-LoRA Motion Track Control"
+    filename: ltx-2.3-22b-ic-lora-motion-track.safetensors
+    size_gb: ~1
+    hf_repo: Lightricks/LTX-2.3-22b-IC-LoRA-Motion-Track-Control
+    local_path: /mnt/c/ai_models/video/ltx-2/ic-loras/
+    status: missing_optional
+    priority: 5
+
+  - name: "ID-LoRA CelebV-HQ"
+    filename: ltx-2.3-22b-id-lora-celebvhq.safetensors
+    size_gb: ~1
+    hf_repo: AviadDahan/LTX-2.3-ID-LoRA-CelebVHQ
+    local_path: /mnt/c/ai_models/video/ltx-2/id-loras/
+    status: missing_optional
+    priority: 5
+
+  # ===== GGUF Fallback (Optional — if FP8 fails) =====
+
+  - name: "LTX-2.3 GGUF Q6_K"
+    filename: ltx-2.3-22b-Q6_K.gguf
+    size_gb: 12
+    hf_repo: QuantStack/LTX-2.3-GGUF
+    local_path: /mnt/c/ai_models/video/ltx-2/gguf/ltx-2.3-22b-Q6_K.gguf
+    status: missing_fallback
+    priority: 2
+    notes: >
+      Download only if FP8 safetensors fail with NotImplementedError on gfx1201.
+      GGUF uses llama.cpp compute path, fully ROCm compatible.
+    download_command: >
+      huggingface-cli download QuantStack/LTX-2.3-GGUF
+      ltx-2.3-22b-Q6_K.gguf
+      --local-dir /mnt/c/ai_models/video/ltx-2/gguf/
+
+# LTX 2.0 LoRAs — DO NOT USE WITH LTX 2.3
+incompatible_loras:
+  paths:
+    - /mnt/c/ai_models/diffusion/lora/ltx/
+    - /mnt/c/ai_models/diffusion/lora/ltxv/
+  reason: >
+    These LoRAs were trained on LTX 2.0 latent space (v1).
+    LTX 2.3 uses a redesigned latent space (v2).
+    Applying these LoRAs to LTX 2.3 produces garbage output.
+    They must be retrained from scratch on LTX 2.3 checkpoints.

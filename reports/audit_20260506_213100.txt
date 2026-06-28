@@ -1,0 +1,193 @@
+================================================================
+EXISTING CUDA STACK AUDIT — READ ONLY
+Date: 西元2026年05月06日 (週三) 21時31分00秒 CST
+GPU: AMD Radeon AI PRO R9700 (gfx1201)
+================================================================
+
+=== /mnt/c/ai_tools/ ===
+Top-level directories:
+  AnimateDiff
+  CogKit
+  Comfy-LTX-Desktop
+  comfyui
+  comfyui-rocm
+  ComfyUI-RookieUI
+  conda-envs
+  custom_nodes
+  demucs
+  DiffSinger_v170
+  DiffSynth-Studio
+  Director
+  finetrainers
+  FireRed-OpenStoryline
+  free-svc
+  GPT-SoVITS
+  kohya_ss
+  llama.cpp-rocm
+  LTX-2
+  LTX-Video
+  LTX-Video-Trainer
+  mcp-automation
+  musubi-tuner
+  OpenMontage
+  OpenUtau
+  RigAnything
+  rs-nodes
+  RVC
+  seed-vc
+  SimpleTuner
+  so-vits-svc
+  stable-diffusion-webui
+  TripoSR
+  UniRig
+  Wan2.1
+
+=== ComfyUI Installations ===
+  [FOUND] comfyui  size=3.8G  remote=git@github.com:comfyanonymous/ComfyUI.git
+    custom_nodes: 30 entries
+  [FOUND] Comfy-LTX-Desktop  size=8.3G  remote=git@github.com:richservo/Comfy-LTX-Desktop.git
+  [FOUND] ComfyUI-RookieUI  size=12M  remote=git@github.com:rookiestar28/ComfyUI-RookieUI.git
+  [FOUND] comfyui-rocm  size=8.0K  remote=
+
+=== Custom Nodes (/mnt/c/ai_tools/comfyui/custom_nodes/) ===
+  ComfyUI-AnimateDiff-Evolved
+  ComfyUI-CameraPack
+  ComfyUI-CogVideoXWrapper
+  ComfyUI_CogView4_Wrapper
+  comfyui_controlnet_aux
+  ComfyUI-Env-Manager
+  comfyui_essentials
+  ComfyUI_essentials
+  ComfyUI-Frame-Interpolation
+  ComfyUI-GGUF
+  comfyui-impact-pack
+  ComfyUI-Impact-Pack
+  ComfyUI-InstantID
+  ComfyUI_IPAdapter_plus
+  ComfyUI-KJNodes
+  ComfyUI-KwaiKolorsWrapper
+  ComfyUI-LTXVideo
+  ComfyUI-Majoor-AssetsManager
+  ComfyUI-Manager
+  comfyui-rmbg
+  ComfyUI-RookieUI
+  ComfyUI-UniRig
+  ComfyUI-VideoHelperSuite
+  ComfyUI-WanVideoWrapper
+  example_node.py.example
+  ImageMetaHub-ComfyUI-Save
+  __pycache__
+  RES4LYF
+  rs-nodes
+  websocket_image_save.py
+
+=== Video AI Tools ===
+  [FOUND] LTX-2  size=7.8G
+  [FOUND] LTX-Video  size=1.1M
+  [FOUND] LTX-Video-Trainer  size=13G
+  [FOUND] Wan2.1  size=32M
+  [FOUND] AnimateDiff  size=360M
+
+=== /mnt/c/ai_models/ (top-level structure) ===
+  613G	/mnt/c/ai_models/diffusion/
+  316G	/mnt/c/ai_models/huggingface/
+  158G	/mnt/c/ai_models/video/
+  115G	/mnt/c/ai_models/language/
+  52G	/mnt/c/ai_models/ollama/
+  22G	/mnt/c/ai_models/audio/
+  11G	/mnt/c/ai_models/vision/
+  3.1M	/mnt/c/ai_models/tooling/
+  1.6M	/mnt/c/ai_models/custom_nodes/
+
+=== LTX-2.3 Models (/mnt/c/ai_models/video/ltx-2/) ===
+  total 55G
+  drwxrwxr-x 2 justin justin 4.0K  4月  5 20:20 audio_vae
+  drwxrwxr-x 2 justin justin 4.0K  4月  5 20:17 connectors
+  drwxrwxr-x 2 justin justin 4.0K  4月  5 20:26 latent_upsampler
+  -rw-rw-r-- 1 justin justin  21K  4月  5 20:17 LICENSE
+  -rw-rw-r-- 1 justin justin  28G  4月  6 01:01 ltx-2.3-22b-dev-fp8.safetensors
+  -rw-rw-r-- 1 justin justin  28G  4月  6 01:07 ltx-2.3-22b-distilled-fp8.safetensors
+  -rw-rw-r-- 1 justin justin 5.3K  4月  5 23:22 README.md
+  Total: 56G
+
+=== Existing Symlinks in /mnt/c/ai_models/ ===
+  /mnt/c/ai_models/video/wan_gguf/ltx-2.3-22b-dev-Q4_K_M.gguf -> broken
+  /mnt/c/ai_models/huggingface/models--LiheYoung--depth-anything-large-hf -> /mnt/c/ai_models/huggingface/hub/models--LiheYoung--depth-anything-large-hf
+  /mnt/c/ai_models/diffusion/diffusers/stable-diffusion-xl-1.0-inpainting-0.1 -> /mnt/c/ai_models/diffusion/stable-diffusion/stable-diffusion-xl-1.0-inpainting-0.1
+  /mnt/c/ai_models/diffusion/diffusers/flux2_klein_4b -> /mnt/c/ai_models/huggingface/hub/models--black-forest-labs--FLUX.2-klein-4B/snapshots/e7b7dc27f91deacad38e78976d1f2b499d76a294
+  /mnt/c/ai_models/diffusion/diffusion_models/ltx-2.3-22b-dev-Q4_K_M.gguf -> broken
+  /mnt/c/ai_models/diffusion/diffusion_models/wan2.1_t2v_1.3B_fp16.safetensors -> /mnt/c/ai_models/video/wan/comfyui/diffusion_models/wan2.1_t2v_1.3B_fp16.safetensors
+  /mnt/c/ai_models/diffusion/diffusion_models/ltx-2.3-22b-dev-UD-Q4_K_M.gguf -> broken
+  /mnt/c/ai_models/diffusion/diffusion_models/flux2_klein_comfyui.safetensors -> /mnt/c/ai_models/huggingface/hub/models--black-forest-labs--FLUX.2-klein-4B/blobs/ec3d4e733a771f61c052fb4856c48b336c55eaf2c65487c2a1faeb9bbda7a343
+  /mnt/c/ai_models/diffusion/diffusion_models/Wan2_2-TI2V-5B-FastWanFullAttn_bf16.safetensors -> broken
+  /mnt/c/ai_models/diffusion/clip/tokenizer.model -> broken
+  /mnt/c/ai_models/diffusion/clip/gemma-2-2b-it-Q8_0.gguf -> broken
+  /mnt/c/ai_models/diffusion/clip/gemma-2-2b-it-Q8_0.tokenizer.model -> broken
+  /mnt/c/ai_models/diffusion/clip/gemma-2-2b-it.safetensors -> broken
+  /mnt/c/ai_models/diffusion/clip/t5/google_t5-v1_1-xxl_encoderonly-fp8_e4m3fn.safetensors -> /mnt/c/ai_models/diffusion/clip/t5xxl_fp8_e4m3fn.safetensors
+  /mnt/c/ai_models/diffusion/clip/google_t5-v1_1-xxl_encoderonly-fp8_e4m3fn.safetensors -> /mnt/c/ai_models/diffusion/clip/t5xxl_fp8_e4m3fn.safetensors
+  /mnt/c/ai_models/diffusion/clip/clip_vision_h.safetensors -> /mnt/c/ai_models/video/wan/comfyui/clip_vision/clip_vision_h.safetensors
+  /mnt/c/ai_models/diffusion/text_encoders/tokenizer.model -> /mnt/c/ai_models/diffusion/text_encoders/gemma-3-12b-it-qat-q4_0-unquantized/tokenizer.model
+  /mnt/c/ai_models/diffusion/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors -> /mnt/c/ai_models/video/wan/comfyui/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors
+  /mnt/c/ai_models/diffusion/text_encoders/gemma-2-2b-it-Q8_0.gguf -> broken
+  /mnt/c/ai_models/diffusion/text_encoders/umt5-xxl-enc-bf16.safetensors -> broken
+
+=== Conda Environments ===
+  
+  # conda environments:
+  #
+  base                 * /home/justin/miniconda3
+  ai_env                 /home/justin/miniconda3/envs/ai_env
+  audio_env              /home/justin/miniconda3/envs/audio_env
+  comfyui                /home/justin/miniconda3/envs/comfyui
+  data_env               /home/justin/miniconda3/envs/data_env
+  kohya_ss               /home/justin/miniconda3/envs/kohya_ss
+  rocm-comfyui-r9700     /home/justin/miniconda3/envs/rocm-comfyui-r9700
+  rocm-diffusers-r9700   /home/justin/miniconda3/envs/rocm-diffusers-r9700
+  rocm-llamacpp-r9700    /home/justin/miniconda3/envs/rocm-llamacpp-r9700
+  rocm-lora-r9700        /home/justin/miniconda3/envs/rocm-lora-r9700
+  rocm-pytorch-r9700     /home/justin/miniconda3/envs/rocm-pytorch-r9700
+  rocm-video-r9700       /home/justin/miniconda3/envs/rocm-video-r9700
+  
+
+=== ROCm Installation ===
+  ROCm version: 7.2.3
+  Path: /opt/rocm
+
+=== PyTorch ROCm Check (rocm-comfyui-r9700) ===
+  PyTorch: 2.5.1+rocm6.2
+  CUDA available (ROCm): True
+  HIP version: 6.2.41133-dd7f95766
+  GPU: AMD Radeon AI PRO R9700
+
+
+=== llama.cpp-rocm Status ===
+  [FOUND] llama-server binary
+  [RUNNING] tmux session: llamacpp-rocm
+
+=== Existing CUDA ComfyUI Workflows ===
+  /mnt/c/ai_tools/comfyui/user/default/workflows: 44 workflow files
+  /mnt/c/ai_tools/comfyui/workflows: 0 workflow files
+
+=== rocm-image-video-stack Project ===
+  [EXISTS] 32 files
+  COMFYUI_ROCM_IMPLEMENTATION.md
+  configs
+  CUSTOM_NODE_COMPATIBILITY_MATRIX.md
+  EXISTING_CUDA_STACK_AUDIT.md
+  logs
+  LTX23_RESEARCH_REPORT.md
+  LTX23_ROCM_IMPLEMENTATION_PLAN.md
+  MODEL_SYMLINK_MAP.md
+  README.md
+  reports
+  ROCM_IMAGE_VIDEO_PLAN.md
+  SAFETY_POLICY.md
+  scripts
+  VALIDATION_PLAN.md
+  WORKFLOW_MIGRATION_PLAN.md
+  workflows
+
+================================================================
+Audit complete. Report saved to: /mnt/c/ai_projects/rocm-image-video-stack/reports/audit_20260506_213100.txt
+================================================================
